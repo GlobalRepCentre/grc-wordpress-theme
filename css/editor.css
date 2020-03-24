@@ -1,0 +1,17 @@
+.wp-block {
+	max-width: 840px;
+}
+	
+.editor-post-title__block .editor-post-title__input, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Vollkorn', serif;
+    font-weight: 400;
+}
+
+.editor-block-list__layout .editor-block-list__block,
+.editor-block-list__layout .editor-block-list__block p {
+    font-family: "Noto Sans", sans-serif;
+}
+
+.blocks-gallery-caption, .wp-block-embed figcaption, .wp-block-image figcaption {
+    text-align: left;
+}
