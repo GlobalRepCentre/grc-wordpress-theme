@@ -13,14 +13,20 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php
+    <?php
+
+      $showDonationPanel = get_field('show_donation_panel');
+    
         while ( have_posts() ) :
             
             the_post();
 
-            if (has_category('ideas')) :
-                get_template_part( 'template-parts/post-types/post', 'ideas' );
+            if (has_category('medical-supply-chains')) :
+                get_template_part( 'template-parts/post-types/post', 'medical-supply-chains' );
 
+            elseif (has_category('ideas')) :
+                get_template_part( 'template-parts/post-types/post', 'ideas' );
+            
             elseif (has_category('events') || has_category('vancouver-institute-events')) :
                 get_template_part( 'template-parts/post-types/post', 'events' );
 
@@ -47,6 +53,8 @@ get_header();
                     'screen_reader_text' => __( 'Continue Reading' ),
                 ) );
             endif;
+
+            if ($showDonationPanel) : get_template_part( 'template-parts/list-view/list', 'donate-grc' ); endif;
 
 		endwhile; // End of the loop.
         ?>

@@ -15,6 +15,8 @@ get_header();
     <span id="cat-description"><?php echo category_description(16); ?></span>
 	<main id="main" class="site-main list-view">
     <?php
+
+    $showDonationPanel = get_field('show_donation_panel');
         
     	// Query for project posts
 		$args = array (
@@ -56,6 +58,7 @@ get_header();
                 elseif ($current === 3):
                     // Close the featured 1/2 width row
                     echo '</div>';
+                    if ($showDonationPanel) : get_template_part( 'template-parts/list-view/list', 'donate-grc' ); endif;
                     get_template_part( 'template-parts/list-view/list', 'small' );
                 
                 else:
