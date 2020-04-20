@@ -48,7 +48,7 @@
                 <?php endif;?>
                 <div class="featured-buttons">
                     <a class="button primary" title="<?php the_title(); ?>" href="<?php if ($externalLink): echo $externalLink; else: echo esc_url(get_permalink()); endif; ?>" rel="bookmark"><?php if ($first_category_name === 'Projects'): echo 'View Project'; else: echo 'Read More'; endif;?></a>
-                    <a class="button" href="<?php echo esc_url( home_url( '/' ) . $first_category_slug ); ?>" title="All <?php echo $first_category_name; ?>"><?php echo 'All ' . $first_category_name; ?></a>
+                    <a class="button" href="<?php echo esc_url( home_url( '/' ) . $first_category_slug ); ?>" title="All <?php echo $first_category_name; ?>"><?php if ($first_category_slug === 'medical-supply-chains') : echo 'View Series'; else: echo 'All ' . $first_category_name; endif; ?></a>
                 </div>
             </div>
         <?php endif; ?>

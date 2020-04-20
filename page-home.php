@@ -18,8 +18,8 @@ get_header();
         <?php // Query parameters for featured posts
         $featuredArgs = array(
             'post_type' => 'post',
-            // Include posts categorized as projects or ideas
-            'category__in' => array(1, 16),
+            // Include posts categorized as projects, ideas, or medical supply chains
+            'category__in' => array(1, 16, 104),
             // Exclude 'exclude from home' and 'Vancouver Institute' categories
             'category__not_in' => array(18, 17),
             'posts_per_page' => 3,
@@ -33,7 +33,7 @@ get_header();
              while ($featured->have_posts()) : $featured->the_post(); 
                 // If it's the first post, put it in a hero template (Hero template contains the start of the featured 1/2 width row)
                 if ($featured->current_post === 0): 
-                    get_template_part( 'template-parts/list-view/list', 'about-grc' );
+                    //get_template_part( 'template-parts/list-view/list', 'about-grc' );
                     get_template_part( 'template-parts/list-view/list', 'hero' );
                 // Get 1/2 width template for posts #2 and #3
                 else: get_template_part( 'template-parts/list-view/list', 'half' );
@@ -54,7 +54,7 @@ get_header();
             'post_type' => 'post',
             // Include posts categorized as news or events
             'category__in' => array(48, 13),
-            // Exclude 'exclude from home' category
+            // Exclude 'exclude from home' and 'Vancouver Institute' categories
             'category__not_in' => array(18, 17),
             'posts_per_page' => 9
         ); 

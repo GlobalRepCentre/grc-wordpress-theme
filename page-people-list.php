@@ -52,6 +52,8 @@ $slug = get_post_field( 'post_name', get_post() );
             $args = array(
                 'post_type' => 'people',
                 'posts_per_page' => -1,
+                'orderby' => 'title',
+                'order'   => 'ASC',
                 'meta_query' => array(
                     array(
                         'key' => 'type_of_person',
@@ -78,6 +80,8 @@ $slug = get_post_field( 'post_name', get_post() );
             <?php $args = array(
                 'post_type' => 'people',
                 'posts_per_page' => -1,
+                'orderby' => 'title',
+                'order'   => 'ASC',
                 'meta_query' => array(
                     array(
                         'key' => 'type_of_person',
@@ -101,6 +105,8 @@ $slug = get_post_field( 'post_name', get_post() );
             <?php $args = array(
                 'post_type' => 'people',
                 'posts_per_page' => -1,
+                'orderby' => 'title',
+                'order'   => 'ASC',
                 'meta_query' => array(
                     array(
                         'key' => 'type_of_person',
@@ -125,6 +131,8 @@ $slug = get_post_field( 'post_name', get_post() );
             <?php $args = array(
                 'post_type' => 'people',
                 'posts_per_page' => -1,
+                'orderby' => 'title',
+                'order'   => 'ASC',
                 'meta_query' => array(
                     array(
                         'key' => 'type_of_person',
