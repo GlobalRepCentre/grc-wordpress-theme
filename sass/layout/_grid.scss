@@ -1,0 +1,63 @@
+.grid {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  @include md {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    &.align-to-edges { align-content: space-between; }
+    &.align-to-top { align-items: stretch; }
+    .column {
+      flex: 1;
+      padding: 1rem 2rem 1rem 0;
+      &.third {
+        max-width: 33.333%;
+        flex-basis: 33.333%;
+        padding: 3rem 0 0 4rem;
+      }
+      &.half {
+        max-width: 50%;
+        flex-basis: 50%;
+        padding: 1rem 2rem 1rem 0;
+        margin-top: 1rem;
+        + .half {
+          padding-left: 2rem;
+          padding-right: 0;
+          border-left: 1px solid $lightgrey;
+          + .half {
+            padding: 1rem 2rem 1rem 0;
+            border-left: 0;
+          }
+        }
+      }
+      &.two-third {
+        max-width: 66.666%;
+        flex-basis: 66.666%;
+      }
+      &.one {
+        padding-right: 0;
+        width: 100%;
+        flex-basis: 100%;
+      }
+      &.shrink {
+        flex: 0 0 1px;
+      }
+    }
+  }
+  .column {
+    padding: 1rem 0;
+    .third.sidebar {
+      margin-top: -2rem;
+      @include md { margin-top: 0; }
+    }
+    .two-third {
+      padding: 1rem 0 0;
+    }
+  }
+  &.no-padding {
+    .column {
+      padding: 0;
+    }
+  }
+}

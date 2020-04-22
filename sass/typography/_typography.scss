@@ -1,0 +1,14 @@
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $black;
+  font-family: $font__main;
+  line-height: 1.6;
+}
+
+@import "headings";
+
+@import "copy";

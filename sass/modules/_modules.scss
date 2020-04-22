@@ -1,0 +1,67 @@
+@import "accessibility";
+@import "alignment";
+
+// Full-width callout panel
+
+.single .callout-panel {
+  margin: 2rem auto -2rem;
+  max-width: 1280px;
+  padding: 2rem 2rem 3rem;
+}
+
+.callout-panel {
+  color: $white;
+  position: relative;
+  padding: 2rem 0 3rem;
+  margin: 2rem 0;
+  background: $darkpurple;
+
+    div {
+      z-index: 1;
+    }
+
+    h1, h2 {
+      font-size: 3em;
+      margin: 0;
+      color: $white;
+    }
+
+    a.call-to-action {
+      display: inline-block;
+      background: $lightpurple;
+      color: $white;
+      text-decoration: none;
+      padding: 1.5rem 1rem;
+      border-radius: 3px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -9999px;
+      right: 0;
+      border-left: 9999px solid $darkpurple;
+      box-shadow: 9999px 0 0 $darkpurple;
+      z-index: -1;
+    }
+
+    @include md {
+      display: flex;
+      align-items: center;
+        div:first-child {
+          flex: 1 0 70%;
+          margin-right: 5%;
+        }
+        div:last-child {
+          flex: 1 0 25%;
+        }
+        a.call-to-action {
+          margin-top: 0;
+          padding: 1.75rem 1rem
+        }
+    }
+}

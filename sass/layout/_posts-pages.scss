@@ -1,0 +1,69 @@
+.site-width,
+.entry-content,
+.list-view .content-area,
+.projects-view .content-area,
+article#person {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+    @include md { padding: 0 2rem;}
+}
+
+.list-view {
+  article {
+    &.small .shrink {
+      padding-bottom: 0;
+      @include md { padding-bottom: 1rem; }
+    }
+  }
+}
+
+.projects-view {
+
+}
+
+.other-posts .other-post {
+  margin-bottom: 1.5rem;
+  .entry-meta {
+    margin-top: 0.75rem;
+    margin-right: 0;
+  }
+}
+
+.single .entry-content {
+  padding-top: 2rem
+}
+
+
+.authors-bio {
+  border-top: 1px solid #b7b7b7;
+  padding-top: 1rem;
+  margin-top: 2rem;
+  font-style: italic;
+  font-size: 0.9em
+}
+
+
+
+
+
+.event {
+    background-color: #777;
+    padding: 0 0.4rem;
+    display: inline-block;
+    color: #fff;
+    border: 1px solid #777
+}
+
+.event span {
+    padding-left: 1rem
+}
+
+.event-details .fas {
+    font-size: 1.1em;
+    margin-right: 0.35rem
+}
+
+.caps {
+    text-transform: uppercase
+}

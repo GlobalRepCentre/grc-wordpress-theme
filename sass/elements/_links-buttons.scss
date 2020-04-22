@@ -1,0 +1,73 @@
+.projects-view .hero .button {
+  margin-right: 1rem
+}
+
+.other-posts .other-post a {
+  text-decoration: none
+}
+
+.other-posts .other-post a:hover {
+  text-decoration: underline
+}
+
+input[type="submit"] {
+  border: 4px double $lightgrey;
+  border-radius: 3px;
+  background: none;
+  color: $white;
+  font-size: 0.9em;
+  padding: 0 0.75rem;
+  height: 3rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  &:hover, &:focus, &:active {
+    background: $purple;
+    border-color: $white;
+    color: $white;
+    cursor: pointer;
+  }
+}
+
+.wpcf7-form-control.wpcf7-submit {
+  background: $purple;
+  padding: 0.4rem 1.4rem;
+  text-transform: uppercase;
+  border-color: $white;
+  color: $white;
+  &:hover, &:focus {
+    background: $purple;
+  }
+}
+
+.people-buttons {
+  margin-top: 1.5rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  width: 100%;
+  @include sm { flex-wrap: nowrap; }
+  button {
+    color: $black;
+    width: 50%;
+    border: 0;
+    border-radius: 0;
+    font-size: 0.8rem;
+    padding: 0.7rem 0.5rem;
+    background: #e3e3e3;
+    @include sm { width: 100%; font-size: 0.9rem; }
+    @include md { font-size: 1rem; }
+    &:first-child {
+      border-top-left-radius: 2px;
+    }
+    &:last-child {
+      border-top-right-radius: 2px;
+    }
+    &:hover, &:active, &:focus {
+      background: $lightpurple;
+    }
+    .active {
+      color: $white;
+      background: $darkpruple;
+    }
+  }
+}

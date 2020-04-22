@@ -1,0 +1,108 @@
+
+.list-view p,
+.projects-view p {
+  font-size: 0.9em;
+  margin-top: 0
+}
+
+.single .entry-content p,
+.page .entry-content p {
+  max-width: $content-width;
+  margin-bottom: 1.5rem;
+    &.post-meta {
+      font-size: 0.9em;;
+    }
+}
+
+.single .entry-content p.post-description {
+  border-bottom: 1px solid $lightgrey;
+  padding: 0 0 1rem;
+  margin: 0 0 1rem;
+  font-style: italic;
+  font-size: 1.1em
+}
+
+.entry-content {
+  .project-description {
+    font-style: italic;
+    border-bottom: 1px solid $lightgrey;
+    margin-top: -0.5rem;
+    margin-bottom: 1.5rem;
+    max-width: $site-width;
+    p {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+p.type-of-project {
+  font-style: italic;
+  margin-top: 0;
+}
+
+#past-events,
+#completed-projects {
+  p {
+    font-size: 0.9em;
+  }
+  .entry-meta {
+    opacity: 0.6;
+  }
+}
+
+.post-meta p {
+  margin-top: 0;
+}
+
+div.person-role p {
+  font-style: italic;
+  display: inline-block;
+  margin: 0.5rem 0 0;
+  font-size: 0.9em;
+}
+
+.other-posts .other-post header p {
+  margin-bottom: 0
+}
+
+dfn,
+span#cat-description,
+cite,
+em,
+i {
+  font-style: italic
+}
+
+.fullscreen-container em,
+.fullscreen-container .byline {
+  display: inline-block;
+  color: $white;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.2em;
+  font-style: normal
+}
+
+.byline {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  margin-right: 0.5rem;
+  font-size: 0.9em
+}
+
+.posted-on {
+  font-size: 0.9em;
+  padding: 0.25rem 0.5rem;
+  background: #e3e3e3;
+  margin: 0 0 0.5rem;
+  display: inline-block
+}
+
+.other-posts {
+  font-size: 0.8rem
+}
+
+span#cat-description {
+  font-style: italic;;
+}
