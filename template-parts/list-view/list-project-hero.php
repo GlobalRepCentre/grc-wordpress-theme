@@ -37,13 +37,13 @@ $externalLink = get_field('external_link');
         <div class="column shrink">
             <a title="<?php the_title(); ?>" class="button" href="<?php if (!($externalLink)) : the_permalink(); else : echo $externalLink; endif; ?>">View feature<i class="fas fa-arrow-right"></i></a>
         </div>
-        <?php if ($projectType) : echo '<div class="column"><p class="type-of-project">' . $projectType . '</p></div>'; endif; ?>
     </div>
     <div class="project-description">
-        <?php
-        // if there's a custom project description, use tjat
-        if ($projectDescription) : echo '<p>' . $projectDescription . '</p>';
-        // otherwise just use the excerpt
-        else : echo '<p>' . get_the_excerpt() . '</p>'; endif; ?>
+      <?php if ($projectType) : echo '<div class="column"><p class="type-of-project">' . $projectType . '</p></div>'; endif; ?>
+      <?php
+      // if there's a custom project description, use tjat
+      if ($projectDescription) : echo '<p>' . $projectDescription . '</p>';
+      // otherwise just use the excerpt
+      else : echo '<p>' . get_the_excerpt() . '</p>'; endif; ?>
     </div>
 </article>

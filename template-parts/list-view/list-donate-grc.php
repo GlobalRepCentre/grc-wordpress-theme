@@ -13,6 +13,7 @@
 // Check for content defined in WP Theme Customizer under the 'Home' section
 function grc_donate_panel() { ?>
     <aside class="callout-panel">
+      <div>
         <div>
         <?php if (get_theme_mod('grc_donate_panel_header')) : ?>
             <h2><?php echo get_theme_mod('grc_donate_panel_header'); ?></h2>
@@ -33,6 +34,7 @@ function grc_donate_panel() { ?>
             </a>
         <?php endif; ?>
         </div>
+      </div>
     </aside>
 <?php }
 

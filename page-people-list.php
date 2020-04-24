@@ -64,7 +64,7 @@ $slug = get_post_field( 'post_name', get_post() );
 
             $assistants = new WP_Query($args);
 
-            echo '<h2 class="section top-margin-two">Production and Research Assistants</h2>';
+            echo '<h2 class="section top-margin">Production and Research Assistants</h2>';
 
             while ( $assistants->have_posts() ) : $assistants->the_post();
 
