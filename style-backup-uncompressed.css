@@ -362,7 +362,7 @@ h2.section.top-margin {
     margin-top: 1.5rem
 }
 
-h2.section.top-margin-two {
+h2.section.top-margin {
     margin-top: 3rem
 }
 
@@ -2627,8 +2627,10 @@ body.home {
 }
 
 header.about-the-grc {
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
     color: #ffffff;
     padding: 4rem 0;
 }
@@ -2663,10 +2665,12 @@ header.about-the-grc a.call-to-action {
 }
 
 header.about-the-grc div:first-child {
-    flex: 1 0 70%;
+    -ms-flex: 1 0 70%;
+        flex: 1 0 70%;
     margin-right: 5%;
 }
 
 header.about-the-grc div:last-child {
-    flex: 1 0 25%;
+    -ms-flex: 1 0 25%;
+        flex: 1 0 25%;
 }

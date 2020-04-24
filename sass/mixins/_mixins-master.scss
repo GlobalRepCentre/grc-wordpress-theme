@@ -1,0 +1,32 @@
+// Media queries
+@mixin sm {
+  @media (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $xl) {
+    @content;
+  }
+}
+
+// Typography
+@mixin small-heading {
+  font-family: $font__main;
+  font-size: 0.9em;
+  color: $grey;
+  font-weight: 400;
+}

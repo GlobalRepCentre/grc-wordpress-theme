@@ -1,0 +1,105 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: $black;
+	border: 1px solid $purple;
+	border-radius: 3px;
+	padding: 0.2rem;
+
+	&:focus {
+		border-color: $lightpurple;
+	}
+}
+
+select {
+	border: 1px solid $grey;
+}
+
+textarea {
+	width: 100%;
+}
+
+#contact-selector {
+  margin-bottom: 2rem;
+  p {
+    margin-bottom: 0.5rem;
+  }
+  label {
+    display: inline-flex;
+    align-items: baseline
+  }
+  input[type=radio] {
+    position: relative;
+    appearance: none;
+    font-size: inherit;
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    color: inherit;
+    outline: none;
+    font-family: 'Font Awesome 5 Free';
+    transition: 0.3s ease-out;
+    &::after {
+      content: '\f111';
+      display: inline-block;
+      text-align: center;
+      width: 1rem;
+      height: 1rem;
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+    &:checked::after {
+      content: '\f192';
+    }
+    + span {
+      margin-left: 0.35rem;
+    }
+  }
+}
+
+form.wpcf7-form {
+  display: none;
+  label {
+    text-transform: uppercase;
+    font-size: 0.85em;
+    color: $grey;
+  }
+  &#general-form {
+    display: block;
+  }
+}
+
+div.wpcf7-response-output {
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 2px;
+}
+
+div.wpcf7-validation-errors {
+  border: 4px double $orange;
+  text-transform: none;
+}
+
+div.wpcf7-mail-sent-ng,
+span.wpcf7-not-valid-tip {
+  border: 4px double $red;
+  text-transform: none;
+}
+
+div.wpcf7-mail-sent-ok {
+  border: 4px double $teal;
+}

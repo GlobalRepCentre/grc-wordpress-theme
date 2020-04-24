@@ -3,23 +3,10 @@
 .list-view .content-area,
 .projects-view .content-area,
 article#person {
-  max-width: 1280px;
+  max-width: $site-width;
   margin: 0 auto;
   padding: 0 1.2rem;
-    @include md { padding: 0 2rem;}
-}
-
-.list-view {
-  article {
-    &.small .shrink {
-      padding-bottom: 0;
-      @include md { padding-bottom: 1rem; }
-    }
-  }
-}
-
-.projects-view {
-
+  @include md { padding: 0 2rem;}
 }
 
 .other-posts .other-post {
@@ -34,7 +21,190 @@ article#person {
   padding-top: 2rem
 }
 
+.list-view, .projects-view {
+  article {
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+  figure.post-image a {
+    width: 100%;
+    img {
+      width: auto;
+    }
+  }
+  .hero .entry-header {
+    @include md { padding-left: 2rem; }
+  }
+}
 
+.list-view {
+  article {
+    &.small .shrink {
+      padding-bottom: 0;
+      @include md { padding-bottom: 1rem; }
+    }
+    &.half + .hero {
+      padding-top: 1rem;
+      margin-top: 1rem;
+      border-top: 1px solid $lightgrey;
+    }
+  }
+  .hero {
+    width: 100%;
+    flex-basis: 100%;
+    padding-bottom: 1rem;
+  }
+  .half {
+    padding-bottom: 2rem;
+  }
+  .one {
+    max-width: 880px;
+    margin-bottom: 1rem;
+    .entry-meta {
+      float: none;
+    }
+    @include md {
+      margin: 2rem 0;
+      padding: 2rem 0 0;
+      border-top: 1px solid $lightgrey;
+    }
+  }
+  .grid + .one {
+    margin: 1rem 0 2rem;
+  }
+}
+
+@include md {
+  .list-view .site-main > article:first-of-type,
+  .list-view.site-main > article:first-of-type,
+  .list-view h2.section + article,
+  .list-view article.half + .hero {
+    border-bottom: 1px solid $lightgrey;
+    padding-bottom: 2rem
+  }
+}
+
+.list-view .one .entry-meta {
+  float: none
+}
+
+.projects-view {
+  .full, .hero {
+    width: 100%;
+    flex-basis: 100%;
+    border-bottom: 1px solid $lightgrey;
+    header {
+      padding-top: 1rem;
+      padding-bottom: 0;
+    }
+  }
+  .hero {
+    padding-bottom: 1rem;
+    figure.post-image a {
+      height: 640px;
+    }
+    .project-description {
+      width: 100%;
+    }
+    .project-info {
+      margin-top: 0;
+    }
+    .partner-logo {
+      margin: 0 1rem 0 0;
+    }
+  }
+  .full, .half {
+    figure.post-image a {
+      height: 390px;
+    }
+  }
+  .half + .full,
+  .half + .hero {
+    border-top: 1px solid $lightgrey;
+    @include md {
+      margin-top: 1rem;
+    }
+  }
+  .full + .half {
+    border-top: 0;
+  }
+  .full .third {
+    padding: 0;
+    @include md { padding: 2rem 0 0 1rem;}
+  }
+  .half {
+    padding-top: 2rem;
+    border-top: 1px solid $lightgrey;
+    @include md {
+      border-bottom: 0;
+      padding-top: 1rem;
+      border-top: 0;
+      .button {
+        margin-bottom: 0;
+      }
+    }
+    h1.project-title {
+      margin-right: 1.5rem;
+    }
+  }
+  figure.post-image a {
+    display: flex;
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  p {
+    margin-bottom: 0;
+  }
+  .partner-logo {
+    display: inline-block;
+  }
+  .partner-logo img {
+    max-width: 130px
+  }
+  .project-info {
+    margin: 1rem 0;
+  }
+}
+
+.partner-logo {
+  margin-bottom: 0.5rem;
+  span {
+    display: block;
+    font-size: 0.7em;
+    text-transform: uppercase;
+  }
+  img {
+    margin: 0.25rem 0.3rem 0.3rem 0;
+    max-width: 150px;
+  }
+}
+
+.hero .partner-logo {
+  margin: 1rem 0 0.5rem 0
+}
+
+.home .list-view .site-main > article:first-of-type {
+  margin-top: 0.2rem;
+  @include md { margin-top: 1.2rem; }
+}
+
+@media (min-width: 850px) {
+    .home .list-view .site-main>article:first-of-type {
+        margin-top: 1.2rem
+    }
+}
+
+h2.section+article.small {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top: 0;
+    border-bottom: 0
+}
+
+// Ideas 
 .authors-bio {
   border-top: 1px solid #b7b7b7;
   padding-top: 1rem;
@@ -43,27 +213,136 @@ article#person {
   font-size: 0.9em
 }
 
+.feature-logo-buttons {
+  @include lg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+    .featured-buttons {
+      padding-top: 0;
+      a.button.primary {
+        margin: 0.15rem 0.3rem 0.15rem 0;
+      }
+    }
+  }
+}
 
+.projects-view .feature-logo-buttons {
+  margin: 0 0 1rem;
+  @include md {
+    .partner-logo {
+      margin-right: 1rem;
+    }
+  }
+}
 
+// People
+section.people-list {
+  border: 1px solid $lightgrey;
+  padding: 1rem;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  display: none;
+}
 
+section.people-list.active {
+  display: block;
+}
 
+section.people-list article:last-child {
+  margin-bottom: 1rem;
+}
+
+article.person-list {
+  margin: 1.7rem 0 2.4rem;
+}
+
+article.person-list h2.person {
+  font-size: 1em;
+  font-family: $font__main;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+
+article#person {
+  margin-top: 1.5rem;
+}
+
+// News and Events
+#grc-news-events {
+  padding-top: 0.5rem;
+}
+
+.single .event-details {
+  margin-top: 1rem;
+  .grid .column .event {
+    padding: 0.5rem;
+  }
+  p {
+    margin-top: 0;
+    a {
+      display: inline;
+    }
+  }
+}
+#past-events h2.section + article.small {
+  padding-top: 1.5rem
+}
 .event {
-    background-color: #777;
-    padding: 0 0.4rem;
-    display: inline-block;
-    color: #fff;
-    border: 1px solid #777
+  background-color: #777;
+  padding: 0 0.4rem;
+  display: inline-block;
+  color: #fff;
+  border: 1px solid #777
 }
 
 .event span {
-    padding-left: 1rem
+  padding-left: 1rem
 }
 
 .event-details .fas {
-    font-size: 1.1em;
-    margin-right: 0.35rem
+  font-size: 1.1em;
+  margin-right: 0.35rem
 }
 
-.caps {
-    text-transform: uppercase
+// Full Screen layout
+
+.fullscreen-container {
+  position: relative;
+  height: calc(100vh - 65px);
+  overflow: hidden;
+  .entry-header {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    z-index: 3;
+  }
+  a.linked-category {
+    color: $white;
+  }
+  &.shadow {
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
+    }
+  }
+  @include md {
+    height: calc(100vh - 62px);
+  }
+}
+
+.single .fullscreen-container + .entry-content {
+  padding-top: 0.5rem
+}
+
+.small img {
+  @include md { max-width: 350px; }
 }

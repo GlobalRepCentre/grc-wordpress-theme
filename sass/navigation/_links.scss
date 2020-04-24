@@ -1,0 +1,129 @@
+a {
+  color: $black;
+  transition: color 0.2s;
+  text-decoration: underline;
+	&:visited {
+		color: $purple;
+	}
+	&:focus {
+		outline: 1px dotted $purple;
+  }
+  &.linked-category {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-top: 1px solid;
+    color: $grey;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+      background-color: $darkgrey;
+    }
+    &.projects {
+      border-color: $blue;
+      &:hover { background-color: $blue; }
+    }
+    &.ideas, &.medical-supply-chains {
+      border-color: $purple;
+      &:hover { background-color: $purple; }
+    }
+    &.news {
+      border-color: $royalblue;
+      &:hover { background-color: $royalblue; }
+    }
+    &.events {
+      border-color: $teal;
+      &:hover { background-color: $teal; }
+    }
+  }
+  &.button {
+    border: 1px solid $grey;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+    &:hover,
+    &:focus {
+      background-color: $purple;
+      color: $white;
+      border-color: $purple;
+    }
+    &.small {
+      font-size: 0.9em;
+      padding: 0.15rem 0.6rem;
+    }
+    &.primary {
+      background-color: $purple;
+      color: $white;
+      margin: 0 0.3rem 0.3rem 0;
+      &:hover,
+      &:focus {
+        background-color: $darkpurple;
+      }
+    }
+    .fas {
+      margin: 0 0.4rem 0;
+      font-size: 0.9em;
+    }
+  }
+}
+
+span.category-link {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.entry-content a {
+  &:hover,
+	&:focus,
+	&:active {
+		border-bottom: 1px solid $purple;
+	}
+}
+
+.list-view article header a, 
+.projects-view article header a {
+  text-decoration: none;
+}
+
+.list-view a:hover h1 span,
+.projects-view a:hover h1 span {
+  background-image: linear-gradient(to bottom, $purple 33%, #2A263D 66%);
+  background-position: 0 1.075em;
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+}
+
+.nav-links {
+  padding: 1rem 2rem 0;
+  max-width: $site-width;
+  margin: 0 auto;
+  a {
+    font-size: 0.8em;
+    text-decoration: none;
+  }
+}
+
+.personal-links {
+  margin-left: 0;
+  padding-left: 0;
+  list-style-type: none;
+  li {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+  @include md { margin-left: 1.25rem; }
+}
+
+.nav-previous {
+  display: inline-block;
+  width: 50%;
+}
+
+.nav-next {
+  display: inline-block;
+  text-align: right;
+  width: 50%;
+}

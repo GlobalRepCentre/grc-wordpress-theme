@@ -67,7 +67,16 @@ input[type="submit"] {
     }
     .active {
       color: $white;
-      background: $darkpruple;
+      background: $darkpurple;
     }
+  }
+}
+
+#people-buttons {
+  font-size: 0.9em;
+  margin-top: 1rem;
+  .fas {
+    margin-right: 0.75rem;
+    margin-left: 0;
   }
 }
