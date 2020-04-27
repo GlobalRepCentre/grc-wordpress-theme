@@ -1,12 +1,12 @@
 // Custom styles on top of default slider styles
-#slide-container {
+#slider-container {
   position: relative;
   background: $lightgrey;
   padding-bottom: 1rem;
   &::before {
     content: '';
     position: absolute;
-    background: $white;
+    background: $fullwhite;
     height: 35%;
     width: 100%;
     top: 0;
@@ -16,12 +16,13 @@
     margin-bottom: 0;
     h1 {
       margin: 0.3rem 1rem 0.6rem 0;
+      line-height: 1.5;
     }
     .byline {
       @include small-heading;
     }
     .posted-on {
-      background: $lightgrey;
+      background: darken($lightgrey, 10%);
       font-size: 0.8em;
     }
     .event {
@@ -37,7 +38,7 @@
     width: 100%;
     height: 100%;
     z-index: 8;
-    background: $white;
+    background: $fullwhite;
     text-align: center;
     img {
       margin-top: 90px;
@@ -75,6 +76,9 @@
         border: 0;
         background: none;
         padding: 0.5rem 0.1rem;
+      }
+      .owl-dot span {
+        border: 1px solid $grey;
       }
     }
   }

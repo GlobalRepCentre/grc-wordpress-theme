@@ -151,6 +151,7 @@
 .footer-menu li {
   -ms-flex: 1 0 50%;
   flex: 1 0 50%;
+  max-width: 50%;
   padding-right: 1rem
 }
 
@@ -160,15 +161,15 @@
 }
 
 .site-footer a:hover {
-  color: #fff
+  color: $fullwhite;
 }
 
 .site-footer .support a {
   display: inline-block;
-  color: #fff;
+  color: $fullwhite;;
   padding: 0.7rem 1rem;
   text-align: center;
-  border: 4px double #fff;
+  border: 4px double $fullwhite;;
   text-decoration: none;
   border-radius: 3px;
   margin-top: 1rem
