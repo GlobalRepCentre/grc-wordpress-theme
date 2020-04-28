@@ -88,6 +88,12 @@ span.category-link {
   text-decoration: none;
 }
 
+.list-view article a.button,
+.projects-view article a.button {
+  margin-top: 1rem;
+  @include md { margin-top: 0; }
+}
+
 .list-view a:hover h1 span,
 .projects-view a:hover h1 span {
   background-image: linear-gradient(to bottom, $purple 33%, #2A263D 66%);
@@ -107,14 +113,14 @@ span.category-link {
 }
 
 .personal-links {
-  margin-left: 0;
   padding-left: 0;
   list-style-type: none;
+  margin: 0;
+  @include md { margin: 0 0 0 1.25rem; }
   li {
     display: inline-block;
     margin-right: 0.5rem;
   }
-  @include md { margin-left: 1.25rem; }
 }
 
 .nav-previous {

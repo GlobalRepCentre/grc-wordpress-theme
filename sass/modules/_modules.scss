@@ -1,5 +1,6 @@
 @import "accessibility";
 @import "alignments";
+@import "wp-styles";
 
 // WP Admin styles
 
@@ -15,7 +16,6 @@ body.admin-bar .fullscreen-container {
   background: $yellow;
   border-radius: 3px;
   border: 6px double $black;
-  max-width: $content-width;
   h2 {
     font-size: 3em;
     line-height: 1.2;
@@ -90,18 +90,18 @@ body.admin-bar .fullscreen-container {
   margin-bottom: 3rem;
   .collapser {
     overflow: auto;
-    background-color: $lightgrey;
-    max-width: 780px;
+    border: 1px solid $grey;
     margin: 1rem 0;
+    border-radius: 2px;
+    max-width: $content-width;
     .title {
       display: flex;
-      border-bottom: 3px solid $white;
       cursor: pointer;
       transition: background-color 0.15s;
       align-items: center;
       &:hover,
       &:focus {
-        background-color: $grey;
+        background-color: $lightgrey;
       }
     }
     .content {
@@ -120,7 +120,7 @@ body.admin-bar .fullscreen-container {
         flex-shrink: 1;
       }
       &.plus-minus {
-        border-left: 3px solid $white;
+        border-left: 1px solid $grey;
       }
     }
   }
@@ -144,9 +144,13 @@ body.admin-bar .fullscreen-container {
     }
     a {
       display: block;
+      &:hover,
+      &:focus {
+        border-bottom: 0;
+      }
     }
     &:nth-child(odd) {
-      background: $lightgrey;
+      background: lighten($lightgrey, 10%);
     }
     .shrink {
       text-align: center;
@@ -158,12 +162,17 @@ body.admin-bar .fullscreen-container {
   &#awards {
     margin: 0.5rem 0;
     max-width: $content-width;
+    font-size: 0.9em;
     h2 {
       font-size: 2em;
       margin: 0;
       padding: 2rem 1.3rem 0.65rem;
       border-bottom: 1px solid $purple;
       text-align: center;
+    }
+    .grid {
+      padding: 1rem 0;
+      @include md { padding: 0; }
     }
     .row {
       img {

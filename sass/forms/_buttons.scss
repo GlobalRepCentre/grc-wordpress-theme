@@ -62,10 +62,14 @@ input[type="submit"] {
     &:last-child {
       border-top-right-radius: 2px;
     }
-    &:hover, &:active, &:focus {
-      background: $lightpurple;
+    &:hover {
+      cursor: pointer;
     }
-    .active {
+    &:hover, &:focus {
+      background: $purple;
+      color: $white;
+    }
+    &.active {
       color: $white;
       background: $darkpurple;
     }

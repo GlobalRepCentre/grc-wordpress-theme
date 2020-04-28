@@ -1,0 +1,11 @@
+// WordPress block styles
+.wp-block-media-text {
+  .wp-block-media-text__content {
+    padding: 0 2rem 0 0;
+  }
+}
+
+.jp-carousel-buttons,
+#jp-carousel-comment-form {
+  display: none !important;
+}

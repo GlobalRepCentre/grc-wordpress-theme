@@ -25,18 +25,22 @@
             <header class="entry-header site-width">
                 <?php the_title( '<h1 class="page-title">', '<i class="column shrink fas fa-arrow-down"></i></h1>' ); ?>
                 <?php grc_posted_on(); ?>
-            </header><!-- .entry-header -->
+            </header>
         </div>
     <?php elseif ($imageDisplayType === 'wide') : ?>
         <?php grc_featured_singular_image('wide', $imageAlignment); ?>
         <header class="entry-header site-width">
             <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-        </header><!-- .entry-header -->
-    <?php else : ?>
+        </header>
+    <?php elseif ($imageDisplayType === 'square') : ?>
         <header class="entry-header site-width">
             <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
             <?php grc_featured_singular_image('large'); ?>
-        </header><!-- .entry-header -->
+        </header>
+    <?php elseif ($imageDisplayType === 'hide') : ?>
+        <header class="entry-header site-width">
+            <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+        </header>
     <?php endif; ?>
 
         <div class="entry-content">

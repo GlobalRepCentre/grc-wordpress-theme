@@ -20,7 +20,8 @@
           }
         }
         ul {
-          background: $darkpurple;
+          background-color: $purple;
+          @include md { background-color: $darkpurple; }
           margin-left: 0.5rem;
           margin-bottom: 0.8rem;
           a {

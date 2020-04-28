@@ -131,7 +131,8 @@
     color: $lightpurple;
     text-decoration: none;
     &:hover,
-    &:focus {
+    &:focus,
+    &:visited {
       color: $white;
     }
 }
