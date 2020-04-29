@@ -11,25 +11,27 @@ body.admin-bar .fullscreen-container {
 // Callout panels for 'about the grc' and 'donate'
 
 .callout-panel {
-  padding: 3rem 2rem;
+  padding: 1rem;
+  @include md { padding: 3rem 2rem; }
   margin: 2rem auto;
   background: $yellow;
   border-radius: 3px;
   border: 6px double $black;
   h2 {
-    font-size: 3em;
+    font-size: 2em;
+    @include md { font-size: 3em; }
     line-height: 1.2;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 0.5rem 0;
   }
   a.call-to-action {
     transition: background-color 0.2s;
     display: inline-block;
     background-color: $orange;
     text-decoration: none;
-    padding: 1.75rem 2.75rem;
+    padding: 1rem 1.5rem;
     border-radius: 3px;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     &:hover, &:focus {
       background-color: darken($orange, 10%);
     }
@@ -63,7 +65,8 @@ body.admin-bar .fullscreen-container {
   border: 0;
     > div {
       max-width: $site-width;
-      padding: 0 2rem;
+      padding: 0 1rem;
+      @include md { padding: 0 2rem; }
       margin: 0 auto;
     }
 }

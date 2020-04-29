@@ -75,6 +75,8 @@ h1.page-title {
     line-height: 1.3;
     margin-bottom: 0;
       .fas {
+        display: none;
+        @include md { display: inline-block; }
         margin-left: 1rem;
         font-size: 0.4em;
       }

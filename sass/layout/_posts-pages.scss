@@ -102,7 +102,7 @@ article#person {
   .hero {
     padding-bottom: 1rem;
     figure.post-image a {
-      height: 640px;
+      @include md { height: 640px; }
     }
     .project-description {
       width: 100%;
@@ -116,7 +116,7 @@ article#person {
   }
   .full, .half {
     figure.post-image a {
-      height: 390px;
+      @include md { height: 390px; }
     }
   }
   .half + .full,
@@ -313,13 +313,14 @@ article#person {
 
 .fullscreen-container {
   position: relative;
-  height: calc(100vh - 65px);
+  height: 50vh;
   overflow: hidden;
   .entry-header {
     position: absolute;
     bottom: 1rem;
     left: 0;
     right: 0;
+    width: 100%;
     z-index: 3;
   }
   a.linked-category {

@@ -39,7 +39,7 @@ $externalLink = get_field('external_link');
         </div>
     </div>
     <div class="project-description">
-      <?php if ($projectType) : echo '<div class="column"><p class="type-of-project">' . $projectType . '</p></div>'; endif; ?>
+      <?php if ($projectType) : echo '<p class="type-of-project">' . $projectType . '</p>'; endif; ?>
       <?php
       // if there's a custom project description, use tjat
       if ($projectDescription) : echo '<p>' . $projectDescription . '</p>';

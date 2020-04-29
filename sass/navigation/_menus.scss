@@ -42,7 +42,7 @@
       li {
         position: relative;
         @include md { float: left; }
-        &.right { float: right; }
+        &.right { @include md { float: right; } }
         &.purple a { color: $lightpurple; font-weight: 700; }
         &.current_page_item > a,
         &.current-menu-item > a,
