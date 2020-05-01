@@ -69,7 +69,7 @@
                     <a href="https://gijn.org/" title="Global Investigative Journalism Network"><img width="136" height="36" src="<?php bloginfo('stylesheet_directory'); ?>/img/gijn-logo.png" alt="GIJN Logo" /></a>
                 </div>
                 <p class="attribution column">
-                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> | <a title="View License" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a> | Global Reporting Centre (<?php echo date("Y"); ?>) | <a href="https://github.com/GlobalRepCentre" title="GRC on GitHub">GitHub</a>
+                    <a title="View License" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a> | Global Reporting Centre (<?php echo date("Y"); ?>) | <a href="https://github.com/GlobalRepCentre" title="GRC on GitHub">GitHub</a>
                 </p>
             </div>
         </div>

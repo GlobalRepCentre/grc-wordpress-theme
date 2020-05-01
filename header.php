@@ -34,9 +34,9 @@
                             echo '<span class="slogan small"><a href="' . get_home_url() . '/about">' . $bloginfo . '</a></span>';
                         endif; ?>
                     </div>
-                    <div id="menu-toggle" class="toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle Menu" role="button">
+                    <button id="menu-toggle" class="toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle Menu">
                         <span></span><span></span><span></span><span></span>
-                    </div>
+                    </button>
                 </div>
                 <nav id="site-navigation" class="main-navigation" role="navigation">
                     <?php

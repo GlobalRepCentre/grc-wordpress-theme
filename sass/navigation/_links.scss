@@ -2,6 +2,7 @@ a {
   color: $black;
   transition: color 0.2s;
   text-decoration: underline;
+  display: inline-block;
 	&:visited {
 		color: $purple;
 	}
@@ -22,24 +23,23 @@ a {
     }
     &.projects {
       border-color: $blue;
-      &:hover { background-color: $blue; }
+      &:hover, &:focus { background-color: $blue; }
     }
     &.ideas, &.medical-supply-chains {
       border-color: $purple;
-      &:hover { background-color: $purple; }
+      &:hover, &:focus { background-color: $purple; }
     }
     &.news {
       border-color: $royalblue;
-      &:hover { background-color: $royalblue; }
+      &:hover, &:focus { background-color: $royalblue; }
     }
     &.events {
       border-color: $teal;
-      &:hover { background-color: $teal; }
+      &:hover, &:focus { background-color: $teal; }
     }
   }
   &.button {
     border: 1px solid $grey;
-    display: inline-block;
     padding: 0.5rem 1rem;
     text-decoration: none;
     font-size: 0.9em;
@@ -49,6 +49,9 @@ a {
       background-color: $purple;
       color: $white;
       border-color: $purple;
+    }
+    &:focus {
+      box-shadow: 1px 1px 2px $purple;
     }
     &.small {
       font-size: 0.9em;
@@ -71,7 +74,6 @@ a {
 }
 
 span.category-link {
-  display: inline-block;
   margin-bottom: 0.5rem;
 }
 
@@ -118,18 +120,15 @@ span.category-link {
   margin: 0;
   @include md { margin: 0 0 0 1.25rem; }
   li {
-    display: inline-block;
     margin-right: 0.5rem;
   }
 }
 
 .nav-previous {
-  display: inline-block;
   width: 50%;
 }
 
 .nav-next {
-  display: inline-block;
   text-align: right;
   width: 50%;
 }

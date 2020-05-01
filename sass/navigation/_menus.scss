@@ -6,6 +6,9 @@
       display: flex;
       align-items: center;
     }
+    a:focus {
+      outline: 1px dotted $white;
+    }
     .main-navigation {
       width: 100%;
       ul {
@@ -20,21 +23,27 @@
           }
         }
         ul {
-          background-color: $purple;
-          @include md { background-color: $darkpurple; }
-          margin-left: 0.5rem;
-          margin-bottom: 0.8rem;
+          @include md { 
+            background-color: $darkpurple; 
+            margin-left: 0.5rem;
+          }
           a {
-            padding: 1rem;
-            @include md { width: 200px; }
+            padding: 0.8rem 0.65rem;
+            @include md { 
+              width: 200px; 
+              padding: 1rem;
+            }
           }
           @include md {
             float: left;
             position: absolute;
-            top: 100%;
+            top: 101%;
             left: -999em;
             z-index: 3;
             margin: 0;
+          }
+          &.focus {
+            left: auto;
           }
         }
         @include md { display: block; }
@@ -55,6 +64,18 @@
           margin-left: 0.3rem;
           display: none;
           @include md { display: inline-block; }
+        }
+        &.menu-item-has-children {
+          > a { 
+            display: none; 
+            @include md { display: inline-block; }
+          }
+          &:focus {
+            outline: 1px dotted $white;
+            ul.sub-menu {
+              left: auto;
+            }
+          }
         }
       }
       a {
@@ -80,11 +101,13 @@
     #branding-toggle { 
       position: relative;
       #menu-toggle {
+        background: none;
+        border: 0;
         width: 40px;
         height: 35px;
         position: absolute;
         transform: rotate(0deg);
-        transition: 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
         cursor: pointer;
         right: 0;
         top: 18px;
@@ -104,6 +127,9 @@
           &:nth-child(1) { top: 5px; }
           &:nth-child(2), &:nth-child(3) { top: 15px; }
           &:nth-child(4) { top: 25px; }
+        }
+        &:focus {
+          outline: 1px dotted $white;
         }
         @include md { display: none; }
         &.toggled {
@@ -173,7 +199,10 @@
   border: 4px double $fullwhite;;
   text-decoration: none;
   border-radius: 3px;
-  margin-top: 1rem
+  margin-top: 1rem;
+  &:focus {
+    background-color: $darkpurple;
+  }
 }
 
 @media (min-width: 480px) {

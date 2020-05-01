@@ -19,6 +19,9 @@
   color: $lightgrey;
   padding-top: 1.5rem;
   margin-top: 2rem;
+  a:focus {
+    outline: 1px dotted $white;
+  }
   #footer-elements {
     padding-bottom: 1.5rem;
   }
@@ -93,7 +96,7 @@
     input[type="submit"] {
       height: 48px;
       line-height: 24px;
-      &:hover {
+      &:hover, &:focus {
         background: darken($purple, 10%);
       }
     }
