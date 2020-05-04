@@ -4,7 +4,7 @@ a {
   text-decoration: underline;
   display: inline-block;
 	&:visited {
-		color: $purple;
+		color: $black;
 	}
 	&:focus {
 		outline: 1px dotted $purple;
@@ -18,8 +18,7 @@ a {
     &:hover,
     &:focus,
     &:active {
-      color: $white;
-      background-color: $darkgrey;
+      color: $white !important;
     }
     &.projects {
       border-color: $blue;
@@ -77,11 +76,11 @@ span.category-link {
   margin-bottom: 0.5rem;
 }
 
-.entry-content a {
+.entry-content a, p a {
   &:hover,
 	&:focus,
 	&:active {
-		border-bottom: 1px solid $purple;
+		color: $linkpurple;
 	}
 }
 
@@ -105,12 +104,30 @@ span.category-link {
 }
 
 .nav-links {
-  padding: 1rem 2rem 0;
+  padding: 1rem 1rem 0;
   max-width: $site-width;
   margin: 0 auto;
+  display: flex;
+  @include md { padding: 1rem 2rem 0;}
+  .nav-previous {
+    padding-right: 2rem;
+    flex: 1;
+  }
+  .nav-next {
+    flex: 1;
+  }
   a {
     font-size: 0.8em;
     text-decoration: none;
+    &:hover, &:focus {
+      color: $linkpurple;
+    }
+  }
+}
+
+h2.person a {
+  &:hover, &:focus {
+    color: $linkpurple;
   }
 }
 
@@ -118,17 +135,9 @@ span.category-link {
   padding-left: 0;
   list-style-type: none;
   margin: 0;
+  display: flex;
   @include md { margin: 0 0 0 1.25rem; }
   li {
     margin-right: 0.5rem;
   }
-}
-
-.nav-previous {
-  width: 50%;
-}
-
-.nav-next {
-  text-align: right;
-  width: 50%;
 }

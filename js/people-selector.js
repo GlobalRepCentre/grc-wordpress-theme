@@ -1,11 +1,15 @@
+// Controls tabs on the people page
+
 jQuery(document).ready(function($){
 
-    // People page
-    $(".people-buttons button").click(function() {
-        $(".people-buttons button").removeClass("active");
-        $(this).addClass("active");
-        var selection = $(this).attr("name");
-        $("section.people-list").removeClass("active");
-        $("#" + selection).addClass("active");
-    });
+  $('[role="tab"]').click(function() {
+    var $activeTab = $('.active[role="tab"]');
+    if ($activeTab) {
+      var $activePanel = $('section#' + $activeTab.attr('aria-controls'));
+      $activeTab.add($activePanel).removeClass('active');
+    }
+    var $panel = $('section#' + $(this).attr('aria-controls'));
+    $(this).add($panel).addClass('active');
+    $panel.focus();
+  });
 });

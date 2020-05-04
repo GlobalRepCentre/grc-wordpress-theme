@@ -67,8 +67,11 @@
         }
         &.menu-item-has-children {
           > a { 
-            display: none; 
-            @include md { display: inline-block; }
+            display: none;
+            @include md { 
+              display: inline-block; 
+              cursor: default;
+            }
           }
           &:focus {
             outline: 1px dotted $white;

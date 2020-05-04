@@ -35,3 +35,7 @@
 #content[tabindex="-1"]:focus {
 	outline: 0;
 }
+
+section[tabindex="0"]:focus {
+  outline: 1px dotted $purple;
+}

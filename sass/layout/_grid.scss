@@ -4,6 +4,9 @@
   width: 100%;
   .column {
     padding: 1rem 0;
+    &.third.sidebar {
+      margin-top: -2rem;
+    }
   }
   @include md {
     display: flex;
@@ -19,8 +22,7 @@
         flex-basis: 33.333%;
         padding: 3rem 0 0 4rem;
         &.sidebar {
-          margin-top: -2rem;
-          @include md { margin-top: 0; }
+          margin-top: 0; 
         }
       }
       &.half {

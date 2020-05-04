@@ -20,13 +20,13 @@ $slug = get_post_field( 'post_name', get_post() );
     <h1 class="page-title"><?php the_title(); ?></h1>
 	<main id="main" class="site-main">
         <?php the_content(); ?>
-        <div class="people-buttons">
-            <button class="active" name="staff">Staff</button>
-            <button name="collaborators">Collaborators</button>
-            <button name="advisory-board">Advisory Board</button>
-            <button name="journalism-advisors">Journalism Advisors</button>
+        <div class="people-buttons" role="tablist" aria-label="People">
+            <button id="staff-button" role="tab" aria-selected="true" aria-controls="staff" class="active" name="staff">Staff</button>
+            <button id="collab-button" role="tab" aria-selected="false" aria-controls="collaborators" name="collaborators">Collaborators</button>
+            <button id="advisory-button" role="tab" aria-selected="false" aria-controls="advisory-board" name="advisory-board">Advisory Board</button>
+            <button id="journo-button" role="tab" aria-selected="false" aria-controls="journalism-advisors" name="journalism-advisors">Journalism Advisors</button>
         </div>
-        <section class="active people-list" id="staff">
+        <section class="active people-list" role="tabpanel" tabindex="0" aria-labelledby="staff-button" id="staff">
             <h2 class="section margin-top">Staff</h2>
             <?php $args = array(
                 'post_type' => 'people',
@@ -74,7 +74,7 @@ $slug = get_post_field( 'post_name', get_post() );
 
             wp_reset_postdata(); ?>
         </section>
-        <section class="people-list" id="collaborators">
+        <section class="people-list" role="tabpanel" tabindex="0" aria-labelledby="collab-button" id="collaborators">
             <h2 class="section margin-top">Collaborators</h2>
             <p>Meet our collaborators and see what GRC projects they’re working on.</p>
             <?php $args = array(
@@ -100,7 +100,7 @@ $slug = get_post_field( 'post_name', get_post() );
 
             wp_reset_postdata(); ?>
         </section>
-        <section class="people-list" id="advisory-board">
+        <section class="people-list" role="tabpanel" tabindex="0" aria-labelledby="advisory-button" id="advisory-board">
             <h2 class="section margin-top">Advisory Board</h2>
             <?php $args = array(
                 'post_type' => 'people',
@@ -125,7 +125,7 @@ $slug = get_post_field( 'post_name', get_post() );
 
             wp_reset_postdata(); ?>
         </section>
-        <section class="people-list" id="journalism-advisors">
+        <section class="people-list" role="tabpanel" tabindex="0" aria-labelledby="journo-button" id="journalism-advisors">
             <h2 class="section margin-top">Journalism Advisors</h2>
             <p>Our Journalism Advisors are drawn from leaders in the global journalism community who provide advice and guidance on the growth of the Global Reporting Centre.</p>
             <?php $args = array(

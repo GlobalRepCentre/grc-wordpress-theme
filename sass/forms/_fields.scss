@@ -46,19 +46,18 @@ textarea {
     position: relative;
     appearance: none;
     font-size: inherit;
-    width: 1rem;
-    height: 1rem;
     margin: 0;
     color: inherit;
-    outline: none;
     font-family: 'Font Awesome 5 Free';
-    transition: 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    padding: 0 0.2rem;
     &::after {
       content: '\f111';
       display: inline-block;
       text-align: center;
-      width: 1rem;
-      height: 1rem;
+    }
+    &:focus {
+      outline: 1px solid $purple;
     }
     &:active {
       transform: scale(0.9);
