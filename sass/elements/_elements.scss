@@ -44,6 +44,11 @@ figure {
   }
 }
 
+.wp-block-image figcaption, figcaption {
+  font-style: italic;
+  padding-left: 0 !important;
+}
+
 figure.widescreen,
 figure.fullscreen {
     width: 100%;

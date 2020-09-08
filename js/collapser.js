@@ -4,6 +4,7 @@ jQuery(document).ready(function($){
     // Toggle collapsers
     $(".collapser .title").click(function () {
         $title = $(this);
+        $title.toggleClass('active');
         $collapser = $(this).closest('.collapser');
         $content = $collapser.find('.content');
         $content.slideToggle(250, function () {

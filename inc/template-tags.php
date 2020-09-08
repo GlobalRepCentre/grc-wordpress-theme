@@ -33,6 +33,29 @@ if ( ! function_exists( 'grc_posted_on' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'grc_podcast_date' ) ) :
+	/**
+	 * Prints HTML with meta information for the current post-date/time.
+	 */
+	function grc_podcast_date() {
+
+  $time_string = '<time class="entry-date" datetime="%1$s">%2$s</time>';
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	);
+
+	$posted_on = sprintf(
+		esc_html_x( '%s', 'post date' ),
+		$time_string
+	);
+
+	echo '<span class="posted-on">Released ' . $posted_on . '</span>'; // WPCS: XSS OK.
+	}
+endif;
+
 if ( ! function_exists( 'grc_posted_by' ) ) :
 
 	function grc_posted_by() {
@@ -145,7 +168,7 @@ if ( ! function_exists( 'grc_featured_image' ) ) :
                 <?php if (has_post_thumbnail()) : the_post_thumbnail($imgSize); else : echo '<div class="ph-box"></div>'; endif; ?>
             </a>
         </figure>
-    <?php }
+  <?php }
     
     // On the people page we don't want to link to the post
 	function grc_person_image() {
@@ -156,6 +179,19 @@ if ( ! function_exists( 'grc_featured_image' ) ) :
 
         <figure class="post-image person">
             <?php if (has_post_thumbnail()) : the_post_thumbnail('medium'); else : echo '<div class="ph-box"></div>'; endif; ?>
+        </figure>
+        
+  <?php }
+  
+  // On the podcast pages we don't want to link to the post
+	function grc_podcast_image() {
+
+		if ( post_password_required() || is_attachment() ) {
+			return;
+        } ?>
+
+        <figure class="post-image">
+            <?php if (has_post_thumbnail()) : the_post_thumbnail('large'); else : echo '<div class="ph-box"></div>'; endif; ?>
         </figure>
         
 	<?php }

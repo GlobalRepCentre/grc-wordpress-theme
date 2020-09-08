@@ -10,6 +10,10 @@
 get_header();
 ?>
 
+<?php $showDonationPanel = get_field('show_donation_panel');
+
+if ($showDonationPanel) : get_template_part( 'template-parts/list-view/list', 'donate-grc' ); endif; ?>
+
 <div class="list-view">
 
 	<div id="primary" class="content-area">
@@ -33,8 +37,8 @@ get_header();
              while ($featured->have_posts()) : $featured->the_post(); 
                 // If it's the first post, put it in a hero template (Hero template contains the start of the featured 1/2 width row)
                 if ($featured->current_post === 0): 
-                    //get_template_part( 'template-parts/list-view/list', 'about-grc' );
                     get_template_part( 'template-parts/list-view/list', 'hero' );
+                    get_template_part( 'template-parts/list-view/list', 'about-grc' );
                 // Get 1/2 width template for posts #2 and #3
                 else: get_template_part( 'template-parts/list-view/list', 'half' );
                 endif;

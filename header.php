@@ -28,11 +28,7 @@
             <div class="site-width nav-container">
                 <div id="branding-toggle">
                     <div class="site-branding">
-                        <a href="<?php echo get_home_url(); ?>" class="custom-logo-link" rel="home"><img width="150" height="70" src="https://globalreportingcentre.org/wp-content/uploads/2019/12/global_reporting_centre_logo.svg" class="custom-logo" alt="Global Reporting Centre Logo"></a><span class="screen-reader-text"><?php bloginfo('name'); ?></span>
-                        <?php $bloginfo = get_bloginfo( 'description' );?>
-                        <?php if ($bloginfo) : 
-                            echo '<span class="slogan small"><a href="' . get_home_url() . '/about">' . $bloginfo . '</a></span>';
-                        endif; ?>
+                      <a href="<?php echo get_home_url(); ?>" class="custom-logo-link" rel="home"><img width="150" height="70" src=https://globalreportingcentre.org/wp-content/uploads/2020/06/global_reporting_centre_logo.svg" class="custom-logo" alt="Global Reporting Centre Logo"></a><span class="screen-reader-text"><?php bloginfo('name'); ?></span>
                     </div>
                     <button id="menu-toggle" class="toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle Menu">
                         <span></span><span></span><span></span><span></span>

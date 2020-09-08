@@ -65,7 +65,7 @@ if ( ! function_exists( 'global_reporting_centre_setup' ) ) :
 
 		// Add theme support for selective refresh for widgets.
         add_theme_support( 'customize-selective-refresh-widgets' );
-        
+
         // Add theme support to change the Gutenberg editor's styles
         add_theme_support('editor-styles');
         add_editor_style( 'css/editor.css' );
@@ -103,7 +103,6 @@ function global_reporting_centre_widgets_init() {
 add_action( 'widgets_init', 'global_reporting_centre_widgets_init' );
 
 add_action( 'init', 'people_post_type' );
-
 // Register Custom Post Type for People
 function people_post_type() {
 
@@ -156,13 +155,47 @@ function people_post_type() {
 	register_post_type( 'people', $args );
 }
 
+add_action( 'init', 'podcast_post_type' );
+// Register custom post type for podcast episodes
+function podcast_post_type() {
+  $labels = array(
+    'name'                  => _x( 'Podcast Episodes', 'Post type general name', 'podcast' ),
+    'singular_name'         => _x( 'Episode', 'Post type singular name', 'podcast' ),
+    'menu_name'             => _x( 'Podcasts', 'Admin Menu text', 'podcast' ),
+    'name_admin_bar'        => _x( 'Episode', 'Add New on Toolbar', 'podcast' ),
+    'add_new'               => __( 'Add New', 'podcast' ),
+    'add_new_item'          => __( 'Add new episode', 'podcast' ),
+    'new_item'              => __( 'New episode', 'podcast' ),
+    'edit_item'             => __( 'Edit episode', 'podcast' ),
+    'view_item'             => __( 'View episode', 'podcast' ),
+    'all_items'             => __( 'Episodes', 'podcast' ),
+  );
+  $args = array(
+    'labels'             => $labels,
+    'description'        => 'Syllabus custom post type',
+    'menu_icon'          => 'dashicons-format-chat',
+    'public'             => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'query_var'          => false,
+    'rewrite'            => false,
+    'has_archive'        => true,
+    'hierarchical'       => false,
+    'menu_position'      => 5,
+    'supports'           => array( 'title', 'editor', 'thumbnail', 'revisions', 'excerpt' ),
+    'show_in_rest'       => true,
+    'rewrite' => array( 'slug' => '/on-chinas-new-silk-road-podcast')
+  );
+  register_post_type( 'podcast', $args );
+}
+
 add_filter( 'enter_title_here', 'custom_enter_title' );
 
 // Instead of displaying "Add Title" in WP Editor, display "Name of person"
 function custom_enter_title( $input ) {
     global $post_type;
     if ( 'people' === $post_type ) {
-        return __( 'Name of person', 'global-reporting-centre-2017' );
+        return __( 'Name of person', 'global-reporting-centre' );
     }
     return $input;
 }
@@ -191,10 +224,10 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 //change admin login screen styles
 function my_login_logo() { ?>
-    
+
     <style type="text/css">
         body.login div#login h1 a {
-            background-image: url('https://globalreportingcentre.org/wp-content/uploads/2019/12/global_reporting_centre_logo.svg');
+            background-image: url('https://globalreportingcentre.org/wp-content/uploads/2020/06/global_reporting_centre_logo.svg');
             background-size: 76%;
             width: 100%;
             height: 86px;
@@ -233,17 +266,17 @@ function global_reporting_centre_scripts() {
     wp_enqueue_style('fa-solid', 'https://use.fontawesome.com/releases/v5.7.2/css/solid.css');
     wp_enqueue_style('fa-brands', 'https://use.fontawesome.com/releases/v5.7.2/css/brands.css');
     wp_enqueue_style('fa-core', 'https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css');
-    
+
     wp_enqueue_style( 'global-reporting-centre-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'global-reporting-centre-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
     wp_enqueue_script( 'global-reporting-centre-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-    
+
     if(is_front_page()) {
 		wp_enqueue_script('owl-js', get_template_directory_uri() . '/carousel/owl.carousel.min.js', array('jquery'), false, true);
 		wp_enqueue_style('owl-css', get_template_directory_uri() . '/carousel/owl.carousel.css');
 		wp_enqueue_script('owl-init', get_template_directory_uri() . '/carousel/owl-init.js', array('owl-js'), false, true);
     }
-    
+
     if ( is_page('contact') ) {
         wp_enqueue_script('contact-selector', get_template_directory_uri() . '/js/contact-selector.js', array('jquery'), false, true);
     }
@@ -252,7 +285,7 @@ function global_reporting_centre_scripts() {
         wp_enqueue_script('people-selector', get_template_directory_uri() . '/js/people-selector.js', array('jquery'), false, true);
     }
 
-    if ( is_page('vancouver-institute') ) {
+    if ( is_page('vancouver-institute') || is_page('about') ) {
         wp_enqueue_script('collapser', get_template_directory_uri() . '/js/collapser.js', array('jquery'), false, true);
     }
 

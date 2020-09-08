@@ -50,7 +50,7 @@
 		}
   };
 
-  // Enable keyboard navigation of dropdown hovers
+/*   // Enable keyboard navigation of dropdown hovers
 
   for (i = 0; i < dropdowns.length; i++) {
     dropdowns[i].firstElementChild.tabIndex = -1;
@@ -72,6 +72,6 @@
     if (!(event.target.classList.contains('menu-item-has-children')) && !(navigation.classList.contains('toggled'))) {
       event.target.parentElement.parentElement.classList.remove('focus');
     }
-  }
+  } */
 
 } )();

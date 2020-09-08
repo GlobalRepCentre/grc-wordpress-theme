@@ -56,18 +56,44 @@ body.admin-bar .fullscreen-container {
       }
     }
   }
+  &.vi {
+    padding: 1rem 2rem;
+    h3 {
+      font-size: 1.6em;
+      margin-bottom: 0;
+    }
+  }
 }
 
-// On individual posts, the callout panel is attached to the footer
+// On individual posts the callout panel is attached to the footer
 .single .callout-panel {
   max-width: none;
   margin-bottom: -2rem;
   border: 0;
     > div {
       max-width: $site-width;
-      padding: 0 1rem;
+      padding: 1rem 0;
       @include md { padding: 0 2rem; }
       margin: 0 auto;
+    }
+}
+
+.home .callout-panel {
+  color: $white;
+  margin: 0.2rem 0;
+  border: 0;
+  padding: 2rem 0 3rem;
+    > div {
+      padding: 0;
+    }
+    h1 {
+      font-size: 2.4em;
+    }
+    a.call-to-action {
+      background-color: $yellow;
+      &:hover, &:focus {
+        background-color: darken($orange, 10%);
+      }
     }
 }
 
@@ -83,7 +109,7 @@ body.admin-bar .fullscreen-container {
     left: -9990px;
     border-left: 9999px solid $darkpurple;
     box-shadow: 9999px 0 0 $darkpurple;
-    z-index: 0l
+    z-index: -1;
   }
 }
 
@@ -91,41 +117,53 @@ body.admin-bar .fullscreen-container {
 
 #collapsers {
   margin-bottom: 3rem;
-  .collapser {
-    overflow: auto;
-    border: 1px solid $grey;
-    margin: 1rem 0;
-    border-radius: 2px;
-    max-width: $content-width;
-    .title {
-      display: flex;
-      cursor: pointer;
-      transition: background-color 0.15s;
-      align-items: center;
-      &:hover,
-      &:focus {
-        background-color: $lightgrey;
-      }
-    }
-    .content {
-      padding: 0 1rem;
-      font-size: 0.9em;
-      display: none;
+}
+
+.collapser {
+  overflow: auto;
+  border: 1px solid $grey;
+  margin: 1rem 0;
+  border-radius: 2px;
+  max-width: $content-width;
+  .title {
+    display: flex;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    align-items: center;
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: $lightgrey;
     }
     span {
       padding: 0.8rem;
-      &.text {
-        flex-grow: 1;
-        padding-left: 1rem;
-      }
-      &.info,
-      &.plus-minus {
-        flex-shrink: 1;
-      }
-      &.plus-minus {
-        border-left: 1px solid $grey;
-      }
     }
+  }
+  .content {
+    font-size: 0.9em;
+    display: none;
+    p, h2, h3, h4 {
+      padding: 0 1rem;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  span {
+    &.text {
+      flex-grow: 1;
+      padding-left: 1rem;
+    }
+    &.info,
+    &.plus-minus {
+      flex-shrink: 1;
+    }
+    &.plus-minus {
+      border-left: 1px solid $grey;
+    }
+  }
+  + h2 {
+    margin-top: 3rem;
   }
 }
 

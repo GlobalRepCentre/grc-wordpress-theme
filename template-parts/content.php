@@ -49,7 +49,6 @@
                 <div class="grid align-to-top">
                     <div class="column">
                         <?php the_content(); ?>
-                        <?php if (is_page('about')) : get_template_part( 'template-parts/custom-fields/custom', 'funders' ); endif; ?>
                         <?php if (is_page('awards')) : get_template_part( 'template-parts/custom-fields/custom', 'awards' ); endif; ?>
                         
                     </div>
@@ -59,9 +58,7 @@
                 </div>
             <?php else : 
                 the_content(); 
-                if (is_page('about')) : get_template_part( 'template-parts/custom-fields/custom', 'funders' ); endif;
                 if (is_page('awards')) : get_template_part( 'template-parts/custom-fields/custom', 'awards' ); endif;
-
             endif; ?>
         </div><!-- .entry-content -->
 

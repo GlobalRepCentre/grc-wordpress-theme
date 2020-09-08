@@ -59,7 +59,7 @@ article#person {
     padding-bottom: 2rem;
   }
   .one {
-    max-width: 880px;
+    max-width: 960px;
     margin-bottom: 1rem;
     .entry-meta {
       float: none;
@@ -106,12 +106,13 @@ article#person {
     }
     .project-description {
       width: 100%;
+      margin-bottom: 1rem;
     }
     .project-info {
       margin-top: 0;
     }
     .partner-logo {
-      margin: 0 1rem 0 0;
+      margin: 0 1rem 0.5rem 0;
     }
   }
   .full, .half {
@@ -129,10 +130,10 @@ article#person {
   }
   .full .third {
     padding: 0;
-    @include md { padding: 2rem 0 0 1rem;}
+    @include md { padding: 1rem 0 0 0;}
   }
   .half {
-    padding-top: 1rem;
+    padding-top: 2rem;
     border-top: 1px solid $lightgrey;
     @include md {
       border-bottom: 0;
@@ -142,8 +143,7 @@ article#person {
       }
     }
     header {
-      padding-top: 2rem;
-      @include md { padding-top: 0; }
+      padding-top: 1rem;
     }
     h1.project-title {
       margin-right: 1.5rem;
@@ -190,7 +190,11 @@ article#person {
 
 .home .list-view .site-main > article:first-of-type {
   margin-top: 0.2rem;
+  border-bottom: 0;
   @include md { margin-top: 1.2rem; }
+  .two-third {
+    padding-bottom: 0;
+  }
 }
 
 @media (min-width: 850px) {
@@ -206,7 +210,7 @@ h2.section+article.small {
     border-bottom: 0
 }
 
-// Ideas 
+// Ideas
 .authors-bio {
   border-top: 1px solid #b7b7b7;
   padding-top: 1rem;
@@ -288,9 +292,7 @@ article#person {
     }
   }
 }
-#past-events h2.section + article.small {
-  padding-top: 1.5rem
-}
+
 .event {
   background-color: $darkgrey;
   padding: 0 0.4rem;
@@ -307,6 +309,22 @@ article#person {
 .event-details .fas {
   font-size: 1.1em;
   margin-right: 0.35rem
+}
+
+.events main {
+  article:first-of-type {
+    border-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    padding-top: 0.5rem !important;
+    @include md { padding-top: 0 !important; }
+  }
+  article:last-of-type {
+    border-bottom: 0 !important;
+  }
+}
+
+.events #past-events h2.section + article.small {
+  padding-top: 1.5rem;
 }
 
 // Full Screen layout
@@ -349,4 +367,196 @@ article#person {
 
 .small img {
   @include md { max-width: 350px; }
+}
+
+.podcast {
+  .fullscreen-container {
+    height: calc(85vh - 95px) !important;
+    .entry-header {
+      @include sm { text-align: right; }
+      color: $white;
+      h1.page-title {
+        color: $white;
+        margin: 0.5rem 0;
+        font-size: 2.4em;
+        @include md {
+          font-size: 3.2em;
+        }
+        span {
+          display: block;
+        }
+      }
+      p {
+        font-size: 0.9em;
+      }
+    }
+  }
+  .podcast-buttons {
+    a {
+      margin: 0 0.5rem 0.5rem 0;
+      img {
+        max-width: 140px;
+        @include sm { max-width: 160px; }
+        @include md { max-width: 200px; }
+      }
+    }
+  }
+  #content-area {
+    order: 2;
+    @include md {
+      order: 1;
+    }
+  }
+  #listen {
+    order: 1;
+    @include md {
+      order: 2;
+    }
+  }
+  #overview {
+    display: flex;
+    flex-direction: column;
+    @include md {
+      flex-direction: row;
+    }
+
+    .fa-arrow-right {
+      margin-left: 0.25rem;
+      font-size: 0.9em;
+    }
+    .two-third {
+      @include md {
+        margin-right: 2.5rem;
+      }
+    }
+    .column {
+      padding: 0;
+      @include md {
+        padding: 1rem 0;
+      }
+    }
+    .entry-meta {
+      margin-top: 1rem;
+      + h2 {
+        margin-top: 0.5rem;
+      }
+    }
+    h2 {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 2rem;
+        height: 1px;
+        background-color: $grey;
+      }
+    }
+  }
+  #episodes {
+    h2 {
+      @include md { margin: 0 0 0.5rem; }
+    }
+    p {
+      font-size: 0.8em;
+    }
+    article {
+      padding: 1rem 0;
+      margin: 0;
+      border-top: 1px solid $lightgrey;
+      h1 {
+        margin: 0.5rem 0 0 1rem;
+      }
+    }
+  }
+  a.podcast, h1.podcast-title {
+    display: flex;
+    align-items: center;
+      span.episode-number {
+        font-weight: 700;
+        font-size: 3em;
+        display: inline-block;
+        font-family: $font__main;
+      }
+  }
+  span.label {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    margin-right: 0.5rem;
+    a {
+      text-decoration: none;
+    }
+  }
+  h1.podcast-title {
+    display: block;
+    @include md { display: flex; }
+    margin: 0.5rem 0;
+    span.episode-number {
+      font-size: 1em;
+      margin-bottom: 0.4rem;
+      margin-right: 0.5rem;
+    }
+  }
+  h2 {
+    margin: 1.5rem 0 0.5rem;
+    &.extra-margin {
+      @include md {
+        margin-top: 2rem;
+      }
+    }
+    @include md {
+      margin: 1rem 0 0.5rem;
+    }
+  }
+  p {
+    font-size: 0.8em;
+  }
+  .podcast-ep-header {
+    background: $lightgrey;
+  }
+  .posted-on {
+    font-size: 0.8em;
+  }
+  #episode-overview {
+    padding: 1.5rem 1rem 3rem;
+    @include md { padding: 1.5rem 2rem 3rem; }
+    .podcast-buttons {
+      margin-bottom: 1rem;
+    }
+    img {
+      border-radius: 3px;
+    }
+  }
+  .one {
+    .shrink + .column {
+      padding: 0;
+      @include md { padding: 1rem 2rem 1rem 0; }
+    }
+  }
+  #transcript {
+    max-width: 780px;
+    p {
+      margin-bottom: 1.4rem;
+      &.lead {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      &.indent {
+        padding-left: 3rem;
+      }
+    }
+    .podcast-embed-container {
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid $lightgrey;
+      padding-bottom: 1rem;
+
+    }
+  }
+  .podcast-embed {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
 }

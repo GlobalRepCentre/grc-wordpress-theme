@@ -41,6 +41,9 @@ get_header();
                 
             elseif ('people' === get_post_type()) :
                 get_template_part( 'template-parts/post-types/post', 'people-bio' );
+
+            elseif ('podcast' === get_post_type()) :
+              get_template_part( 'template-parts/post-types/post', 'podcast' );
             
             else :
                 get_template_part('template-parts/content');

@@ -46,7 +46,7 @@ a {
     &:hover,
     &:focus {
       background-color: $purple;
-      color: $white;
+      color: $white !important;
       border-color: $purple;
     }
     &:focus {
@@ -72,6 +72,10 @@ a {
   }
 }
 
+.entry-content p a {
+  display: inline;
+}
+
 span.category-link {
   margin-bottom: 0.5rem;
 }
@@ -84,15 +88,14 @@ span.category-link {
 	}
 }
 
-.list-view article header a, 
+.list-view article header a,
 .projects-view article header a {
   text-decoration: none;
 }
 
 .list-view article a.button,
 .projects-view article a.button {
-  margin-top: 1rem;
-  @include md { margin-top: 0; }
+  margin-top: 0.5rem;
 }
 
 .list-view a:hover h1 span,

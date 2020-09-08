@@ -10,10 +10,10 @@
 get_header();
 ?>
 
-<div id="primary" class="content-area site-width">
+<div id="primary" class="content-area site-width events">
     <main id="main" class="site-main list-view">
     <h1 class="page-title"><?php the_title(); ?></h1>
-        <?php 
+        <?php
 		//get today's date
 		$today = current_time('mysql');
 
@@ -34,24 +34,20 @@ get_header();
 
         if ($upcoming->have_posts()) : ?>
 
-            <div class="grid align-to-top">
+            <h2 class="section">Upcoming Events</h2>
 
-                <h2 class="section">Upcoming Events</h2>
-            
-                <?php while ($upcoming->have_posts()) : $upcoming->the_post(); 
+            <?php while ($upcoming->have_posts()) : $upcoming->the_post();
 
-                        get_template_part( 'template-parts/list-view/list', 'small' );
-        
-                endwhile; ?>
+              get_template_part( 'template-parts/list-view/list', 'small' );
 
-            </div>
+            endwhile; ?>
 
         <?php endif; ?>
 
-    </main>      
+    </main>
 
     <?php wp_reset_postdata();
-    
+
     //query for archived events
 	$past = new WP_Query(array (
 		'post_type' => 'post',
@@ -72,17 +68,17 @@ get_header();
         <aside id="past-events" class="list-view">
 
             <h2 class="section">Past Events</h2>
-                                
+
             <?php while($past->have_posts()): $past->the_post();
-                    
+
                  get_template_part( 'template-parts/list-view/list', 'small' );
-                        
+
             endwhile; ?>
 
         </aside>
-                
+
     <?php endif;
-        
+
     wp_reset_postdata(); ?>
 
 </div>

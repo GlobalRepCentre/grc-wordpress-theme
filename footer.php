@@ -24,7 +24,7 @@
                                 <div class="column caps">Get our newsletter</div>
                                 <div class="column shrink social">
                                     <a title="GRC on Twitter" href="https://twitter.com/GlobalRepCentre"><i class="fab fa-twitter-square"></i></a>
-                                    <a title="GRC on Facebook" href="https://www.facebook.com/globalreportingcentre/"><i class="fab fa-facebook-square"></i></a>
+                                    <a title="GRC on Facebook" href="https://www.facebook.com/globalreportingcentre/"><i class="fab fa-facebook-square"></i></a><a title="GRC on Instagram" href="https://www.instagram.com/globalreportingcentre/"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                             <div id="email-form">
@@ -53,11 +53,11 @@
                         ?>
                     </div>
                     <div class="column shrink" id="reporting-support">
-                        <?php $bloginfo = get_bloginfo( 'description' );?>
-                        <?php if ($bloginfo) : 
-                            echo '<span class="slogan"><a href="' . get_home_url() . '/about">' . $bloginfo . '</a></span>';
-                        endif; ?>
-                        <span class="support"><a href="https://donate.support.ubc.ca/page/19817/donate/1?transaction.dirgift=UBC%20Global%20Reporting%20Centre%20Fund%20%20G0578" rel="noreferrer noopener" target="_blank">Support the GRC</a></span>
+                      <span class="support"><a href="https://donate.support.ubc.ca/page/19817/donate/1?transaction.dirgift=UBC%20Global%20Reporting%20Centre%20Fund%20%20G0578" rel="noreferrer noopener" target="_blank">Support the GRC</a></span>
+                      <?php $bloginfo = get_bloginfo( 'description' );?>
+                        <?php if ($bloginfo) :
+                          echo '<span class="slogan"><a href="' . get_home_url() . '/about">' . $bloginfo . '</a></span>';
+                      endif; ?>
                     </div>
                 </div>
             </div>

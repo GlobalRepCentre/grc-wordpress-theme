@@ -22,7 +22,7 @@ $slug = get_post_field( 'post_name', get_post() );
         <?php the_content(); ?>
         <div class="people-buttons" role="tablist" aria-label="People">
             <button id="staff-button" role="tab" aria-selected="true" aria-controls="staff" class="active" name="staff">Staff</button>
-            <button id="collab-button" role="tab" aria-selected="false" aria-controls="collaborators" name="collaborators">Collaborators</button>
+            <button id="contrib-button" role="tab" aria-selected="false" aria-controls="contributors" name="contributors">Contributors</button>
             <button id="advisory-button" role="tab" aria-selected="false" aria-controls="advisory-board" name="advisory-board">Advisory Board</button>
             <button id="journo-button" role="tab" aria-selected="false" aria-controls="journalism-advisors" name="journalism-advisors">Journalism Advisors</button>
         </div>
@@ -74,9 +74,9 @@ $slug = get_post_field( 'post_name', get_post() );
 
             wp_reset_postdata(); ?>
         </section>
-        <section class="people-list" role="tabpanel" tabindex="0" aria-labelledby="collab-button" id="collaborators">
-            <h2 class="section margin-top">Collaborators</h2>
-            <p>Meet our collaborators and see what GRC projects they’re working on.</p>
+        <section class="people-list" role="tabpanel" tabindex="0" aria-labelledby="contrib-button" id="contributors">
+            <h2 class="section margin-top">Contributors</h2>
+            <p>Meet our contributors and see what GRC projects they’re working on.</p>
             <?php $args = array(
                 'post_type' => 'people',
                 'posts_per_page' => -1,
@@ -90,9 +90,9 @@ $slug = get_post_field( 'post_name', get_post() );
                 )
             );
         
-            $collaborators = new WP_Query($args);
+            $contributors = new WP_Query($args);
         
-            while ( $collaborators->have_posts() ) : $collaborators->the_post();
+            while ( $contributors->have_posts() ) : $contributors->the_post();
             
                 get_template_part( 'template-parts/post-types/post', 'people' );
         
@@ -141,9 +141,9 @@ $slug = get_post_field( 'post_name', get_post() );
                 )
             );
         
-            $collaborators = new WP_Query($args);
+            $advisors = new WP_Query($args);
         
-            while ( $collaborators->have_posts() ) : $collaborators->the_post();
+            while ( $advisors->have_posts() ) : $advisors->the_post();
             
                 get_template_part( 'template-parts/post-types/post', 'people' );
         

@@ -17,27 +17,29 @@
         margin: 0;
         padding-left: 0;
         li {
-          &:hover > ul, 
-          &:focus > ul {
+          &:hover ul {
+            left: auto;
+          }
+          a:focus + ul {
             left: auto;
           }
         }
         ul {
-          @include md { 
-            background-color: $darkpurple; 
+          @include md {
+            background-color: $darkpurple;
             margin-left: 0.5rem;
           }
           a {
             padding: 0.8rem 0.65rem;
-            @include md { 
-              width: 200px; 
+            @include md {
+              width: 200px;
               padding: 1rem;
             }
           }
           @include md {
             float: left;
             position: absolute;
-            top: 101%;
+            top: 100%;
             left: -999em;
             z-index: 3;
             margin: 0;
@@ -66,10 +68,10 @@
           @include md { display: inline-block; }
         }
         &.menu-item-has-children {
-          > a { 
+          > a {
             display: none;
-            @include md { 
-              display: inline-block; 
+            @include md {
+              display: inline-block;
               cursor: default;
             }
           }
@@ -101,7 +103,7 @@
         @include md { padding-bottom: 0; }
       }
     }
-    #branding-toggle { 
+    #branding-toggle {
       position: relative;
       #menu-toggle {
         background: none;
@@ -163,7 +165,11 @@
   margin: 0 auto 2rem;
   padding: 0;
   max-width: 440px;
-  list-style-type: none
+  list-style-type: none;
+  text-align: center;
+  @include sm {
+    text-align: left;
+  }
 }
 
 @media (min-width: 850px) {
