@@ -12,7 +12,7 @@ if ( ! function_exists( 'grc_posted_on' ) ) :
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
 	function grc_posted_on() {
-    if ( is_page() && !is_front_page() || in_category('events') || in_category('projects') ) {
+    if ( is_page() && !is_front_page() || in_category('events') || in_category('features') ) {
 		 return;
     }
     $time_string = '<time class="entry-date" datetime="%1$s">%2$s</time>';
@@ -65,14 +65,9 @@ if ( ! function_exists( 'grc_posted_by' ) ) :
 
         $author = get_field('post_author');
 
-        if (!($author)) : $author = 'GRC Staff'; endif; 
-    
-		$byline = sprintf(
-			esc_html_x( 'by %s', 'post author', 'global-reporting-centre' ),
-			'<span class="author vcard">' . $author . '</span>'
-		);
+        if (!($author)) : $author = 'GRC Staff'; endif;
 
-        echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+        echo '<span class="byline">by ' . $author . '</span>'; // WPCS: XSS OK.
 
 	}
 endif;
@@ -86,7 +81,7 @@ if ( ! function_exists( 'grc_event_start_date_time' ) ) :
         }
         if (get_field('event_start')) :
             $startdate = get_field('event_start');
-            echo '<span class="event startdate">' . $startdate . '</span>';    
+            echo '<span class="event startdate">' . $startdate . ' PST</span>';
         endif;
     }
 endif;
@@ -155,7 +150,7 @@ if ( ! function_exists( 'grc_featured_image' ) ) :
 	/**
 	 * Displays an optional featured post thumbnail.
 	 */
-    
+
     // If externalLink exists its value gets passed in
 	function grc_featured_image($externalLink=false, $imgSize='medium') {
 		if ( post_password_required() || is_attachment() ) {
@@ -169,7 +164,7 @@ if ( ! function_exists( 'grc_featured_image' ) ) :
             </a>
         </figure>
   <?php }
-    
+
     // On the people page we don't want to link to the post
 	function grc_person_image() {
 
@@ -180,9 +175,9 @@ if ( ! function_exists( 'grc_featured_image' ) ) :
         <figure class="post-image person">
             <?php if (has_post_thumbnail()) : the_post_thumbnail('medium'); else : echo '<div class="ph-box"></div>'; endif; ?>
         </figure>
-        
+
   <?php }
-  
+
   // On the podcast pages we don't want to link to the post
 	function grc_podcast_image() {
 
@@ -193,7 +188,7 @@ if ( ! function_exists( 'grc_featured_image' ) ) :
         <figure class="post-image">
             <?php if (has_post_thumbnail()) : the_post_thumbnail('large'); else : echo '<div class="ph-box"></div>'; endif; ?>
         </figure>
-        
+
 	<?php }
 
 endif;
@@ -203,7 +198,7 @@ if ( ! function_exists( 'grc_featured_singular_image' ) ) :
 	 * Displays the featured image for singular pages
 	 */
 	function grc_featured_singular_image($imageDisplayType='wide', $imageAlignment='middle') {
-        
+
 		if ( post_password_required() || is_attachment() || $imageDisplayType === 'hide' ) {
 			return;
         }
@@ -213,16 +208,16 @@ if ( ! function_exists( 'grc_featured_singular_image' ) ) :
         $photo_credit = get_field('photo_credit', $post_thumbnail_id);
         $photo_caption = get_post($post_thumbnail_id)->post_excerpt; ?>
 
-        <?php 
-            if ($imageDisplayType === 'full') : 
+        <?php
+            if ($imageDisplayType === 'full') :
                 echo '<figure class="fullscreen">';
                 the_post_thumbnail('large');
 
-            elseif ($imageDisplayType === 'wide') : 
-                echo '<figure class="widescreen ' . $imageAlignment . '">'; 
+            elseif ($imageDisplayType === 'wide') :
+                echo '<figure class="widescreen ' . $imageAlignment . '">';
                 the_post_thumbnail('large');
 
-            else : 
+            else :
                 echo '<figure class="square">';
                 the_post_thumbnail('large');
 
@@ -236,7 +231,7 @@ if ( ! function_exists( 'grc_featured_singular_image' ) ) :
             <?php endif; ?>
         </figure> <?php
     }
-endif;     
+endif;
 
 
 if ( ! function_exists( 'grc_linked_category_output' ) ) :
@@ -249,7 +244,7 @@ if ( ! function_exists( 'grc_linked_category_output' ) ) :
         // Use the slug instead of the category URL so that we don't prepend the URL with '/category'
         $first_category_slug = $category[0]->slug;
 
-        if ($first_category_slug === 'exclude-from-home') :
+        if ($first_category_slug === 'exclude-from-home' || $first_category_slug === 'exclude-from-featured-area') :
             // If it's the exclude from home category, get the second category
             $first_category_name = $category[1]->name;
             $first_category_slug = $category[1]->slug;
@@ -260,7 +255,7 @@ if ( ! function_exists( 'grc_linked_category_output' ) ) :
             <?php echo $first_category_name; ?>
         </a>
 
-    <?php 
+    <?php
 	}
 endif;
 
@@ -275,7 +270,7 @@ if ( ! function_exists( 'grc_event_category_output' ) ) :
             <a class="linked-category events" href="<?php echo esc_url( home_url( '/' ) . 'events'); ?>" title="All GRC Events">Events</a>
         <?php else : ?>
             <a class="linked-category events" href="<?php echo esc_url( home_url( '/' ) . 'vancouver-institute-events'); ?>" title="All Vancouver Institute Events">VI Events</a>
-        <?php endif; 
+        <?php endif;
 
 	}
 endif;

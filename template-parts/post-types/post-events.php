@@ -38,7 +38,7 @@
             <?php grc_event_category_output();
             the_title( '<h1 class="page-title">', '<i class="column shrink fas fa-arrow-down"></i></h1>' ); ?>
             <?php if ($startdate_time) : ?>
-                <em><?php echo $startdate_time; ?> to <?php if ($enddate_time) : echo $enddate_time; else : echo $end_time; endif; ?></em>
+                <em><?php echo $startdate_time; ?><?php if ($enddate_time) : echo ' to ' . $enddate_time; elseif ($end_time): echo ' to ' . $end_time; endif; ?> PST</em>
             <?php endif; ?>
         </header><!-- .entry-header -->
     </div>
@@ -70,10 +70,10 @@
                     <div class="grid">
                         <?php if ($imageDisplayType !== 'full') : ?>
                             <div class="column shrink">
-                                <span class="event"><?php echo $startdate_time; ?> to <?php if ($enddate_time) : echo $enddate_time; else : echo $end_time; endif; ?></span>
+                                <span class="event"><?php echo $startdate_time; ?><?php if ($enddate_time) : echo ' to ' . $enddate_time; elseif ($end_time) : echo ' to ' . $end_time; endif; ?> PST</span>
                             </div>
                         <?php endif; ?>
-                        <?php if ($register) : ?><div class="column shrink"><a class="button" href="<?php echo $register; ?>" title="Register/Get Tickets">Register/Get Tickets</a></div><?php endif; ?>
+                        <?php if ($register) : ?><div class="column shrink"><a class="button" href="<?php echo $register; ?>" title="Get the link here">Get the link here</a></div><?php endif; ?>
                     </div>
                     <?php if ($venue && $map) : ?>
                         <p><span><i class="fas fa-map-marker-alt"></i>Location: <a title="View on Map" href="<?php echo $map; ?>"><?php echo $venue; ?></a></span></p>
@@ -124,6 +124,12 @@
                             <h2>Upcoming <?php if ($first_category_name !== 'Events'): echo 'Vancouver Institute '; endif; ?>Events</h2>
                             <?php while ( $upcoming_events->have_posts() ) :
                                 $upcoming_events->the_post();
+
+                                // update the time/date variables
+                                $startdate_time = get_field('event_start');
+                                $end_time = get_field('event_end_time');
+                                $enddate_time = get_field('event_end');
+
                                 ?>
                                 <div class="other-post">
                                     <?php
@@ -139,7 +145,7 @@
                                     <header>
                                         <a href="<?php the_permalink()?>"><p><?php the_title(); ?></p></a>
                                         <div class="entry-meta">
-                                            <span class="event"><?php echo $startdate_time; ?> to <?php if ($enddate_time) : echo $enddate_time; else : echo $end_time; endif; ?></span>
+                                            <span class="event"><?php echo $startdate_time; ?><?php if ($enddate_time) : echo ' to ' . $enddate_time; elseif ($end_time) : echo ' to ' . $end_time; endif; ?> PST</span>
                                         </div>
                                     </header>
                                 </div>

@@ -95,7 +95,7 @@ i {
   font-size: 0.9em;
   padding: 0.25rem 0.5rem;
   background: #e3e3e3;
-  margin: 0 0 0.5rem;
+  margin: 0.5rem 0;
   display: inline-block
 }
 
@@ -109,4 +109,24 @@ span#cat-description {
 
 .caps {
   text-transform: uppercase;
+}
+
+.language-tags, .related {
+  span {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 0.3rem;
+    a {
+      padding: 0.1rem 0.2rem;
+      background: $yellow;
+      border-radius: 0.1rem;
+    }
+  }
+}
+
+span.language {
+  padding: 0.1rem 0.2rem;
+  background: $yellow;
+  border-radius: 0.1rem;
 }

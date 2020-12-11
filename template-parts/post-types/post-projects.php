@@ -13,7 +13,7 @@
     $imageDisplayType = get_field('image_display');
     $imageShadow = get_field('image_shadow');
     $imageAlignment = get_field('image_alignment');
-    
+
     // project-specific fields
     $projectType = get_field('project_type');
     $projectDescription = get_field('project_description');
@@ -58,22 +58,22 @@
                         $currentID = get_the_ID();
                         $args = array(
                             'post_type' => 'post',
-                            'category_name' => 'projects',
+                            'category_name' => 'features',
                             'posts_per_page' => 2,
                             'tag' => 'featured',
                             'order' => 'DESC',
                             'orderby' => 'date',
                             'post__not_in' => array($currentID)
                         );
-                    
+
                     $more_projects = new WP_Query($args);
-                    
+
                     if ( $more_projects->have_posts() ) : ?>
                         <div class="other-posts">
                             <h2>More Projects</h2>
                             <a class="button small" href="https://us15.list-manage.com/subscribe/post?u=625d9e0d6500bffb3011fc2a0&id=29cfaf2756">Get Updates</a>
                             <?php while ( $more_projects->have_posts() ) :
-                                $more_projects->the_post(); 
+                                $more_projects->the_post();
                                 $projectDescription = get_field('project_description');
                                 ?>
                                 <div class="grid align-to-top no-padding">
@@ -92,8 +92,8 @@
                                             echo '<div class="ph-box small"></div>';
                                             echo '</a>';
                                         endif; ?>
-                                    </div>                            	
-                                </div>				
+                                    </div>
+                                </div>
                             <?php endwhile; ?>
                         </div>
                     <?php endif;

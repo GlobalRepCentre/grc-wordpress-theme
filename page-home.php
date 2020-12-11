@@ -21,11 +21,11 @@ if ($showDonationPanel) : get_template_part( 'template-parts/list-view/list', 'd
 
         <?php // Query parameters for featured posts
         $featuredArgs = array(
-            'post_type' => 'post',
-            // Include posts categorized as projects, ideas, or medical supply chains
-            'category__in' => array(1, 16, 104),
-            // Exclude 'exclude from home' and 'Vancouver Institute' categories
-            'category__not_in' => array(18, 17),
+            'post_type' => array('post', 'podcast'),
+            // Include posts categorized as features, ideas, news, medical supply chains, or jersey offshore
+            'category__in' => array(1, 16, 104, 48, 107),
+            // Exclude 'exclude from home', 'exclude from featured area', and 'Vancouver Institute' categories
+            'category__not_in' => array(18, 113, 17),
             'posts_per_page' => 3,
         );
 
@@ -34,9 +34,9 @@ if ($showDonationPanel) : get_template_part( 'template-parts/list-view/list', 'd
 
         if ($featured->have_posts()) :
 
-             while ($featured->have_posts()) : $featured->the_post(); 
+             while ($featured->have_posts()) : $featured->the_post();
                 // If it's the first post, put it in a hero template (Hero template contains the start of the featured 1/2 width row)
-                if ($featured->current_post === 0): 
+                if ($featured->current_post === 0):
                     get_template_part( 'template-parts/list-view/list', 'hero' );
                     get_template_part( 'template-parts/list-view/list', 'about-grc' );
                 // Get 1/2 width template for posts #2 and #3
@@ -58,10 +58,12 @@ if ($showDonationPanel) : get_template_part( 'template-parts/list-view/list', 'd
             'post_type' => 'post',
             // Include posts categorized as news or events
             'category__in' => array(48, 13),
-            // Exclude 'exclude from home' and 'Vancouver Institute' categories
-            'category__not_in' => array(18, 17),
+            // Exclude 'exclude from home' and 'Vancouver Institute' and 'Podcast Promo' categories
+            'category__not_in' => array(18, 17, 106, 114),
+            // Exclude 'exlude from slider' tag
+            'tag__not_in' => array(115),
             'posts_per_page' => 9
-        ); 
+        );
 
         // Query for featured posts
         $sliders = new WP_Query($sliderArgs);
@@ -72,19 +74,19 @@ if ($showDonationPanel) : get_template_part( 'template-parts/list-view/list', 'd
                 <hr>
                 <h3>GRC News and Events</h3>
             </div>
-    
+
             <div id="slider-container"><!-- start slider container -->
                 <div id="slider-loader">
-                    <img src="<?php bloginfo('template_url'); ?>/carousel/ajax-loader.gif" alt="Loader" />	
+                    <img src="<?php bloginfo('template_url'); ?>/carousel/ajax-loader.gif" alt="Loader" />
                 </div>
                 <div id="featured-slider" class="owl-carousel owl-theme site-width"><!-- start slider -->
-                    <?php while ($sliders->have_posts()) : $sliders->the_post(); 
+                    <?php while ($sliders->have_posts()) : $sliders->the_post();
                         get_template_part( 'template-parts/slider/homepage', 'slide' );
                     endwhile; ?>
                 </div><!-- close slider -->
             </div><!-- close slider container -->
 
-        <?php endif; 
+        <?php endif;
 
         wp_reset_postdata(); ?>
 

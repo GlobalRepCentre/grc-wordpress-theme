@@ -24,7 +24,7 @@ a {
       border-color: $blue;
       &:hover, &:focus { background-color: $blue; }
     }
-    &.ideas, &.medical-supply-chains {
+    &.ideas, &.medical-supply-chains, &.jersey-offshore {
       border-color: $purple;
       &:hover, &:focus { background-color: $purple; }
     }
@@ -93,8 +93,7 @@ span.category-link {
   text-decoration: none;
 }
 
-.list-view article a.button,
-.projects-view article a.button {
+.list-view article a.button {
   margin-top: 0.5rem;
 }
 

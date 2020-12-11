@@ -1,6 +1,6 @@
 <?php
 /**
- * The medical supply chains page template file
+ * The jersey offshore page template file
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -12,7 +12,7 @@ get_header();
 
 <div id="primary" class="content-area site-width">
     <h1 class="page-title"><?php the_title(); ?></h1>
-    <span id="cat-description"><?php echo category_description(104); ?></span>
+    <span id="cat-description"><?php echo category_description(107); ?></span>
 	<main id="main" class="site-main list-view">
     <?php
 
@@ -21,7 +21,7 @@ get_header();
     	// Query for project posts
 		$args = array (
 		    'post_type' => 'post',
-            'category_name' => 'medical-supply-chains',
+            'category_name' => 'jersey-offshore',
             'posts_per_page' => 12,
         );
 
@@ -29,19 +29,19 @@ get_header();
         $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
     	// Query for ideas posts
-        $medicalchains = new WP_Query($args);
+        $jerseyoffshore = new WP_Query($args);
 
         // Pagination fix
         $temp_query = $wp_query;
         $wp_query = NULL;
-        $wp_query = $medicalchains;
+        $wp_query = $jerseyoffshore;
 
-        if ($medicalchains->have_posts()) :
+        if ($jerseyoffshore->have_posts()) :
 
-            while ($medicalchains->have_posts()) : $medicalchains->the_post();
+            while ($jerseyoffshore->have_posts()) : $jerseyoffshore->the_post();
 
                 // Assign current post number to variable
-                $current = $medicalchains->current_post;
+                $current = $jerseyoffshore->current_post;
 
                 // Use the current post number to determine the post's layout
 
@@ -79,7 +79,7 @@ get_header();
         wp_reset_postdata();
 
         // Custom query loop pagination
-        next_posts_link( '<i class="fas fa-arrow-left"></i> Previous Posts', $medicalchains->max_num_pages );
+        next_posts_link( '<i class="fas fa-arrow-left"></i> Previous Posts', $jerseyoffshore->max_num_pages );
         previous_posts_link('Newer Posts <i class="fas fa-arrow-right"></i>');
 
         // Reset main query object

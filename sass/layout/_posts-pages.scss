@@ -83,11 +83,20 @@ article#person {
     border-bottom: 1px solid $lightgrey;
     padding-bottom: 2rem
   }
+  .list-view.site-main.research > article:first-of-type {
+    padding-bottom: 0;
+		border-bottom: 0;
+  }
 }
 
 .list-view .one .entry-meta {
   float: none
 }
+
+.list-view.research .description p {
+  margin-bottom: 0.5rem;
+}
+
 
 .projects-view {
   .full, .hero {
@@ -172,13 +181,18 @@ article#person {
 
 .partner-logo {
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
   span {
+    flex-basis: 100%;
     display: block;
     font-size: 0.7em;
     text-transform: uppercase;
   }
   img {
-    margin: 0.25rem 0.5rem 0.3rem 0;
+    margin: 0.3rem 0.7rem 0.3rem 0;
     max-width: 150px;
     max-height: 44px;
   }
@@ -186,6 +200,10 @@ article#person {
 
 .hero .partner-logo {
   margin: 1rem 0 0.5rem 0
+}
+
+.home .list-view {
+  overflow: hidden;
 }
 
 .home .list-view .site-main > article:first-of-type {
@@ -224,9 +242,11 @@ h2.section+article.small {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 1.25rem;
+    margin-top: 0.7rem;
     .featured-buttons {
+      padding-left: 0.5rem;
       padding-top: 0;
+      margin-left: auto;
       a.button.primary {
         margin: 0.15rem 0.3rem 0.15rem 0;
       }
@@ -559,4 +579,39 @@ article#person {
     margin-bottom: 1.25rem;
   }
 
+}
+
+.page-template-page-events-vi .list-view .one {
+  margin: 2rem 0 0;
+}
+
+#post-1767 .entry-content {
+	max-width: 1000px;
+	margin: 1.5em auto 0;
+}
+
+#post-1767 h1.page-title {
+	max-width: 1000px;
+	margin: 0.7em auto 0;
+	padding: 0 0.9375rem;
+	display: block;
+}
+
+.page-template-page-events #post-1896 {
+	display: none;
+}
+
+div.att {clear: left; float: left; margin-bottom: 1.5rem;}
+
+.instagram-media {
+	max-width: 440px !important;
+	margin: 0 auto !important;
+}
+
+// VANCOUVER INSTITUTE
+.vi-contact {
+	background: #FFF8D3;
+	padding: 1rem;
+	border-radius: 2px;
+	border: 5px double grey;
 }

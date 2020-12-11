@@ -14,7 +14,9 @@
 	</div><!-- #content -->
 
 	<footer class="site-footer">
-        <div id="footer-elements" class="grid site-width">
+    <div id="footer-elements" class="grid site-width">
+      <?php if (! is_front_page() ) : ?>
+
 			<!-- Begin MailChimp Signup Form -->
 			<div id="mc_embed_signup" class="column">
                 <form action="https://twitter.us15.list-manage.com/subscribe/post?u=625d9e0d6500bffb3011fc2a0&amp;id=29cfaf2756" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="validate" novalidate>
@@ -39,7 +41,19 @@
                         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_625d9e0d6500bffb3011fc2a0_29cfaf2756" tabindex="-1" value=""></div>
                     </div>
                 </form>
-			</div><!--End mc_embed_signup-->
+      </div><!--End mc_embed_signup-->
+      <?php else : ?>
+        <div class="column shrink" id="home-only">
+          <div id="label-social" class="grid">
+            <div class="column caps"><a class="button" href="http://eepurl.com/czCx1X">Get our newsletter</a></div>
+            <div class="column shrink social">
+              <a title="GRC on Twitter" href="https://twitter.com/GlobalRepCentre"><i class="fab fa-twitter-square"></i></a>
+              <a title="GRC on Facebook" href="https://www.facebook.com/globalreportingcentre/"><i class="fab fa-facebook-square"></i></a>
+              <a title="GRC on Instagram" href="https://www.instagram.com/globalreportingcentre/"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      <?php endif; ?>
             <div class="column" id="menu-footer">
                 <div class="grid no-padding">
                     <div class="column">
@@ -53,7 +67,7 @@
                         ?>
                     </div>
                     <div class="column shrink" id="reporting-support">
-                      <span class="support"><a href="https://donate.support.ubc.ca/page/19817/donate/1?transaction.dirgift=UBC%20Global%20Reporting%20Centre%20Fund%20%20G0578" rel="noreferrer noopener" target="_blank">Support the GRC</a></span>
+                      <span class="support"><a href="https://globalreportingcentre.org/donate-to-the-global-reporting-centre/">Donate to the GRC</a></span>
                       <?php $bloginfo = get_bloginfo( 'description' );?>
                         <?php if ($bloginfo) :
                           echo '<span class="slogan"><a href="' . get_home_url() . '/about">' . $bloginfo . '</a></span>';
@@ -69,7 +83,7 @@
                     <a href="https://gijn.org/" title="Global Investigative Journalism Network"><img width="136" height="36" src="<?php bloginfo('stylesheet_directory'); ?>/img/gijn-logo.png" alt="GIJN Logo" /></a>
                 </div>
                 <p class="attribution column">
-                    <a title="View License" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a> | Global Reporting Centre (<?php echo date("Y"); ?>) | <a href="https://github.com/GlobalRepCentre" title="GRC on GitHub">GitHub</a>
+                    <a href="https://globalreportingcentre.org/privacy-policy/">Privacy Policy</a> | <a title="View License" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a> | Global Reporting Centre (<?php echo date("Y"); ?>) | <a href="https://github.com/GlobalRepCentre" title="GRC on GitHub">GitHub</a>
                 </p>
             </div>
         </div>

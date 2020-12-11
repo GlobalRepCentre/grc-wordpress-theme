@@ -147,10 +147,10 @@ function people_post_type() {
 		'menu_icon'             => 'dashicons-groups',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
-        'can_export'            => true,
+    'can_export'            => true,
 		'publicly_queryable'    => true,
-        'capability_type'       => 'page',
-        'show_in_rest'          => true,
+    'capability_type'       => 'page',
+    'show_in_rest'          => true,
 	);
 	register_post_type( 'people', $args );
 }

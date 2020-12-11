@@ -8,34 +8,14 @@
  */
 
 ?>
-
-<?php 
-// Check for content defined in WP Theme Customizer under the 'Home' section
-function grc_donate_panel() { ?>
-    <aside class="callout-panel">
-      <div>
-        <div>
-        <?php if (get_theme_mod('grc_donate_panel_header')) : ?>
-            <h2><?php echo get_theme_mod('grc_donate_panel_header'); ?></h2>
-        <?php endif;
-
-        if (get_theme_mod('grc_donate_panel_text')) : ?>
-            <div><?php echo get_theme_mod('grc_donate_panel_text'); ?></div>
-        <?php endif; ?>
-        </div>
-        <div>
-        <?php if (get_theme_mod('grc_donate_panel_link')) : ?>
-            <a target="_blank" rel="noopener noreferrer" class="call-to-action" href="<?php echo get_theme_mod('grc_donate_panel_link'); ?>">
-                <?php if (get_theme_mod('grc_donate_panel_link_text')) :
-                    echo get_theme_mod('grc_donate_panel_link_text');
-                else :
-                    echo 'Our approach';
-                endif; ?>
-            </a>
-        <?php endif; ?>
-        </div>
-      </div>
-    </aside>
-<?php }
-
-grc_donate_panel();
+<aside class="callout-panel tuesday">
+  <div>
+    <div>
+      <h2>Double your impact in December</h2>
+      <div>Support independent collaborative journalism that brings global perspective to local issues. Every dollar donated this month (up to $10,000) will be matched by the <a href="https://www.tiny.foundation">Tiny Foundation</a>.</div>
+    </div>
+    <div>
+      <a class="call-to-action" href="https://globalreportingcentre.org/donate">Donate now</a>
+    </div>
+  </div>
+</aside>

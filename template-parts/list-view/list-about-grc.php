@@ -9,28 +9,28 @@
 
 ?>
 
-<?php 
-// Check for content defined in WP Theme Customizer under the 'Home' section
-function grc_about_panel() { ?>
-  <aside class="callout-panel about">
-    <div>
-      <div>
-      <?php if (get_theme_mod('grc_about_panel_header')) : ?>
-        <h1><?php echo get_theme_mod('grc_about_panel_header'); ?></h1>
-      <?php endif;
-      if (get_theme_mod('grc_about_panel_text')) : ?>
-        <div><?php echo get_theme_mod('grc_about_panel_text'); ?></div>
-      <?php endif; ?>
-      </div>
-      <div>
-      <?php if (get_theme_mod('grc_about_panel_link')) : ?>
-        <a class="call-to-action" href="<?php echo get_theme_mod('grc_about_panel_link'); ?>">
-          <?php echo 'Learn More'; ?>
-        </a>
-      <?php endif; ?>
+<aside class="about-newsletter">
+  <div class="container">
+    <div class="about-grc">
+      <div class="aside-content-area">
+        <h1>Global journalism, done differently.</h1>
+        <div><p>The most impactful stories are the ones we tell together. That's why our approach to journalism is collaborative at its core. <a href="https://globalreportingcentre.org/about/">Learn about how we work</a>.</p></div>
       </div>
     </div>
-  </aside>
-<?php }
-
-grc_about_panel();
+    <div class="newsletter-grc">
+      <div class="aside-content-area">
+        <h2>Want to know when we publish new stories?</h2>
+        <p>Sign up for our newsletter.</p>
+        <div id="mc_embed_signup">
+          <form action="https://twitter.us15.list-manage.com/subscribe/post?u=625d9e0d6500bffb3011fc2a0&amp;id=29cfaf2756" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="your email" required>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_625d9e0d6500bffb3011fc2a0_29cfaf2756" tabindex="-1" value=""></div>
+              <input type="submit" value="sign up" name="subscribe" id="mc-embedded-subscribe" class="button">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

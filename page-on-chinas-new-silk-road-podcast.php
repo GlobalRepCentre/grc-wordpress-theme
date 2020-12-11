@@ -16,6 +16,9 @@ get_header();
   $stitcherLink = get_field('stitcher_link');
   $deezerLink = get_field('deezer_link');
   $radioPubLink = get_field('radiopub_link');
+  $castBoxLink = get_field('castbox_link');
+  $overCastLink = get_field('overcast_link');
+  $iheartLink = get_field('iheart_link');
 
 ?>
 
@@ -38,7 +41,7 @@ get_header();
         </div>
         <div class="column" id="listen">
           <h2>Listen on</h2>
-          <p><a title="Listen on Apple Podcasts" href="<?php echo $appleLink; ?>">Apple Podcasts</a> | <a title="Listen on Spotify" href="<?php echo $spotifyLink; ?>">Spotify</a> | <a title="Listen on Google Podcasts" href="<?php echo $googleLink; ?>">Google Podcasts</a> | <a title="Listen on Stitcher" href="<?php echo $stitcherLink; ?>">Stitcher</a> | <a title="Listen on Deezer" href="<?php echo $deezerLink; ?>">Deezer</a> | <a title="Listen on RadioPublic" href="<?php echo $radioPubLink; ?>">RadioPublic</a></p>
+          <p><a title="Listen on Apple Podcasts" href="<?php echo $appleLink; ?>">Apple Podcasts</a> | <a title="Listen on Spotify" href="<?php echo $spotifyLink; ?>">Spotify</a> | <a title="Listen on Google Podcasts" href="<?php echo $googleLink; ?>">Google Podcasts</a> | <a title="Listen on Stitcher" href="<?php echo $stitcherLink; ?>">Stitcher</a> | <a title="Listen on Castbox" href="<?php echo $castBoxLink; ?>">Castbox</a> | <a title="Listen on Overcast" href="<?php echo $overCastLink; ?>">Overcast</a> | <a title="Listen on Deezer" href="<?php echo $deezerLink; ?>">Deezer</a> | <a title="Listen on RadioPublic" href="<?php echo $radioPubLink; ?>">RadioPublic</a> | <a title="Listen on iHeartRadio" href="<?php echo $iheartLink; ?>">iHeartRadio</a></p>
           <h2>Show credits</h2>
           <p>For a list of reporters and contributors to this project, please <a href="https://globalreportingcentre.org/on-chinas-new-silk-road-podcast/credits/" title="On China's New Silk Road Show Credits">visit this page</a>.</p>
         </div>

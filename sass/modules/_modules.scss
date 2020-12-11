@@ -78,22 +78,26 @@ body.admin-bar .fullscreen-container {
     }
 }
 
-.home .callout-panel {
-  color: $white;
-  margin: 0.2rem 0;
+.callout-panel.tuesday {
   border: 0;
-  padding: 2rem 0 3rem;
+  padding: 2rem 0;
+  margin: 0;
+
     > div {
-      padding: 0;
+      padding: 0 2rem;
+      max-width: $site-width;
+      margin: 0 auto;
     }
-    h1 {
-      font-size: 2.4em;
+    h2 {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin: 0 0.5rem 1rem 0;
+      font-family: $font__main;
+      display: inline-block;
     }
-    a.call-to-action {
-      background-color: $yellow;
-      &:hover, &:focus {
-        background-color: darken($orange, 10%);
-      }
+    img {
+      max-width: 260px;
+      margin: 0 0 1rem;
     }
 }
 
@@ -110,6 +114,129 @@ body.admin-bar .fullscreen-container {
     border-left: 9999px solid $darkpurple;
     box-shadow: 9999px 0 0 $darkpurple;
     z-index: -1;
+  }
+}
+
+aside.about-newsletter {
+  background-color: $darkpurple;
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  left: 50%;
+
+  div.container {
+    @include md { display: flex; }
+    color: $white;
+
+    > div {
+      padding: 3rem 2rem;
+      @include md {
+        .aside-content-area {
+          max-width: 540px;
+          margin: 0 auto;
+        }
+      }
+
+      &.about-grc {
+        @include md {
+          display: flex;
+          align-items: center;
+          flex: 1;
+          flex-basis: 40%;
+          padding: 4rem 2.5rem;
+        }
+      }
+      &.newsletter-grc {
+        background-image: url('https://globalreportingcentre.org/wp-content/uploads/2020/11/grc-newsletter-bg.jpg');
+        background-size: cover;
+        background-position: center right;
+        @include md {
+          display: flex;
+          align-items: center;
+          padding: 4rem 2.5rem 4rem 4rem;
+        }
+
+        #mc_embed_signup_scroll {
+          font-size: 0.9em;
+          margin-top: 0.5rem;
+
+          input[type="email"] {
+            display: inline-block;
+            color: $black;
+            background: #fff;
+            border: 4px double #4e6a8f;
+            margin-right: 0.25rem;
+            border-radius: 0.25rem;
+            max-width: 190px;
+            @include md { max-width: 240px; }
+            width: 100%;
+            padding: 0.3rem;
+            height: auto;
+          }
+
+          input[type="submit"] {
+            display: inline-block;
+            border: 4px double #4e6a8f;
+            border-radius: 0.25rem;
+            background: #fff;
+            color: $black;
+            text-transform: none;
+            padding: 0.3rem 0.6rem;
+            height: auto;
+            transition: background-color 0.2s;
+
+            &:hover, &:focus {
+              background: darken($white, 10%);
+            }
+          }
+        }
+
+        @include md {
+          flex: 1;
+          flex-basis: 60%;
+          position: relative;
+          overflow: hidden;
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 105%;
+            width: 35px;
+            top: -2.5%;
+            left: -20px;
+            transform: rotate(5deg);
+            background-color: $darkpurple;
+          }
+        }
+      }
+      h1, h2 {
+        font-size: 1.5em;
+        line-height: 1.5;
+        position: relative;
+        margin: 0 0 1rem;
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -0.3rem;
+          left: 0;
+          width: 2rem;
+          height: 1px;
+          background-color: $white;
+        }
+      }
+      p {
+        margin-bottom: 0;
+        a {
+          color: $white;
+          &:hover, &:focus {
+            color: $yellow;
+          }
+        }
+      }
+    }
   }
 }
 
