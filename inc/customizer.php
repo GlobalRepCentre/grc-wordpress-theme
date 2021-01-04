@@ -14,118 +14,53 @@ function global_reporting_centre_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
   $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-    
-  // Add settings in WP Theme customizer to modify content of home page 'about the GRC' panel
-  $wp_customize->add_setting( 'grc_about_panel_header' );
-  $wp_customize->add_control(
-     new WP_Customize_Color_Control(
-         $wp_customize,
-         'grc_about_panel_header_content',
-         array(
-             'label'      => __( 'About Panel Header', 'global-reporting-centre' ),
-             'type'       => 'text',
-             'section'    => 'static_front_page',
-             'settings'   => 'grc_about_panel_header'
-         )
-     )
-  );
-  $wp_customize->add_setting( 'grc_about_panel_text' );
-  $wp_customize->add_control(
-     new WP_Customize_Color_Control(
-         $wp_customize,
-         'grc_about_panel_text_content',
-         array(
-             'label'      => __( 'About Panel Text', 'global-reporting-centre' ),
-             'type'       => 'textarea',
-             'section'    => 'static_front_page',
-             'settings'   => 'grc_about_panel_text'
-         )
-     )
-  );
-  $wp_customize->add_setting( 'grc_about_panel_link_text' );
-  $wp_customize->add_control(
-     new WP_Customize_Color_Control(
-         $wp_customize,
-         'grc_about_panel_link_content',
-         array(
-             'label'      => __( 'About Panel Button Text', 'global-reporting-centre' ),
-             'type'       => 'url',
-             'section'    => 'static_front_page',
-             'settings'   => 'grc_about_panel_link_text'
-         )
-     )
-  );
-  $wp_customize->add_setting( 'grc_about_panel_link' );
-  $wp_customize->add_control(
-     new WP_Customize_Color_Control(
-         $wp_customize,
-         'grc_about_panel_link_content',
-         array(
-             'label'      => __( 'About Panel Button URL', 'global-reporting-centre' ),
-             'type'       => 'url',
-             'description'=> 'Where should the button link to?',
-             'section'    => 'static_front_page',
-             'settings'   => 'grc_about_panel_link'
-         )
-     )
-  );
-  // Add settings in WP Theme customizer to modify content of donate panel
-  $wp_customize->add_section( 'grc_donate' , array(
-    'title'      => __( 'Donate to the GRC', 'global-reporting-centre' ),
+
+  // Add settings in WP Theme customizer to modify content of the GRC promo panel
+  $wp_customize->add_section( 'grc_donate_panel' , array(
+    'title'      => __( 'GRC Donation Panel', 'global-reporting-centre' ),
     'priority'   => 30,
   ));
-  $wp_customize->add_setting( 'grc_donate_panel_header' );
-  $wp_customize->add_control(
-     new WP_Customize_Color_Control(
-         $wp_customize,
-         'grc_donate_panel_header_content',
-         array(
-             'label'      => __( 'Donate Panel Header', 'global-reporting-centre' ),
-             'type'       => 'text',
-             'section'    => 'grc_donate',
-             'settings'   => 'grc_donate_panel_header'
-         )
-     )
+  $wp_customize->add_setting( 'grc_donate_header', array( 'sanitize_callback' => 'sanitize_text_field', ) );
+  $wp_customize->add_control( 'grc_donate_header',
+    array(
+      'label'      => __( 'Donate Panel Header', 'global-reporting-centre' ),
+      'type'       => 'text',
+      'section'    => 'grc_donate_panel',
+      'settings'   => 'grc_donate_header'
+    )
   );
-  $wp_customize->add_setting( 'grc_donate_panel_text' );
-  $wp_customize->add_control(
-     new WP_Customize_Color_Control(
-         $wp_customize,
-         'grc_donate_panel_text_content',
-         array(
-             'label'      => __( 'Donate Panel Text', 'global-reporting-centre' ),
-             'type'       => 'textarea',
-             'section'    => 'grc_donate',
-             'settings'   => 'grc_donate_panel_text'
-         )
-     )
+  // Sanitize textarea field
+  function sanitize_textarea($input) {
+    $allowed = array('p' => array(), 'a' => array());
+    return wp_kses( $input, $allowed);
+  }
+  $wp_customize->add_setting( 'grc_donate_text', array( 'sanitize_callback' => 'sanitize_textarea', ) );
+  $wp_customize->add_control( 'grc_donate_text',
+    array(
+      'label'      => __( 'Donate Panel Text', 'global-reporting-centre' ),
+      'type'       => 'textarea',
+      'section'    => 'grc_donate_panel',
+      'settings'   => 'grc_donate_text'
+    )
   );
-  $wp_customize->add_setting( 'grc_donate_panel_link_text' );
-  $wp_customize->add_control(
-     new WP_Customize_Color_Control(
-         $wp_customize,
-         'grc_donate_panel_link_text',
-         array(
-             'label'      => __( 'Donate Panel Button Text', 'global-reporting-centre' ),
-             'type'       => 'text',
-             'section'    => 'grc_donate',
-             'settings'   => 'grc_donate_panel_link_text'
-         )
-     )
+  $wp_customize->add_setting( 'grc_donate_link_text', array( 'sanitize_callback' => 'sanitize_text_field', ) );
+  $wp_customize->add_control( 'grc_donate_link_text',
+    array(
+      'label'      => __( 'Donate Panel Button Text', 'global-reporting-centre' ),
+      'type'       => 'text',
+      'section'    => 'grc_donate_panel',
+      'settings'   => 'grc_donate_link_text'
+    )
   );
-  $wp_customize->add_setting( 'grc_donate_panel_link' );
-  $wp_customize->add_control(
-     new WP_Customize_Color_Control(
-         $wp_customize,
-         'grc_donate_panel_link_content',
-         array(
-             'label'      => __( 'Donate Panel Button URL', 'global-reporting-centre' ),
-             'type'       => 'url',
-             'description'=> 'Where should the button link to?',
-             'section'    => 'grc_donate',
-             'settings'   => 'grc_donate_panel_link'
-         )
-     )
+  $wp_customize->add_setting( 'grc_donate_link', array( 'sanitize_callback' => 'esc_url_raw', ) );
+  $wp_customize->add_control( 'grc_donate_link',
+    array(
+      'label'      => __( 'Donate Panel Button URL', 'global-reporting-centre' ),
+      'type'       => 'url',
+      'description'=> 'What should the button link to?',
+      'section'    => 'grc_donate_panel',
+      'settings'   => 'grc_donate_link'
+    )
   );
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
