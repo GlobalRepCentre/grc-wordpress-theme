@@ -26,6 +26,9 @@
     $category = get_the_category();
     $first_category_name = $category[0]->name;
 
+    //get today's date
+    $today = current_time('mysql');
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -73,7 +76,17 @@
                                 <span class="event"><?php echo $startdate_time; ?><?php if ($enddate_time) : echo ' to ' . $enddate_time; elseif ($end_time) : echo ' to ' . $end_time; endif; ?> PST</span>
                             </div>
                         <?php endif; ?>
-                        <?php if ($register) : ?><div class="column shrink"><a class="button" href="<?php echo $register; ?>" title="Get the link here">Get the link here</a></div><?php endif; ?>
+                        <?php if ($first_category_name !== 'Events') : ?>
+                          <?php if ($register) : ?>
+                            <div class="column shrink"><a class="button" href="<?php echo $register; ?>" title="View the lecture recording">View the lecture recording</a></div>
+                          <?php // elseif (!($register)) : ?>
+                            <!--<p class="column one"><em>This event has passed. The link to a recording of this lecture will be posted here soon</em>.</p>-->
+                          <?php else : ?>
+                            <div class="column shrink"><a class="button" href="https://globalreportingcentre.org/vancouver-institute/#lecture-link" title="Get the link here">Get the link here</a></div>
+                          <?php endif; ?>
+                        <?php elseif ($register) : ?>
+                          <div class="column shrink"><a class="button" href="<?php echo $register; ?>" title="Get the link here">Get the link here</a></div>
+                        <?php endif; ?>
                     </div>
                     <?php if ($venue && $map) : ?>
                         <p><span><i class="fas fa-map-marker-alt"></i>Location: <a title="View on Map" href="<?php echo $map; ?>"><?php echo $venue; ?></a></span></p>
@@ -87,9 +100,6 @@
             </div><!-- /two-third -->
             <div class="column third">
                 <?php // get more events post to populate sidebar
-
-                //get today's date
-                $today = current_time('mysql');
 
                     $currentID = get_the_ID();
 
@@ -157,7 +167,7 @@
                             <?php if ($first_category_name === 'Events'): ?>
                                 <p>To get notified of upcoming events, subscribe to our <a href="https://us15.list-manage.com/subscribe/post?u=625d9e0d6500bffb3011fc2a0&id=29cfaf2756">quarterly newsletter</a> or follow us on <a href="https://twitter.com/GlobalRepCentre">Twitter</a>, <a href="https://www.facebook.com/globalreportingcentre/">Facebook</a>, or <a href="https://www.instagram.com/globalreportingcentre/">Instagram</a>.</p>
                             <?php else : ?>
-                                <p>For the latest Vancouver Institute Events and updates, follow them <a href="https://www.facebook.com/TheVancouverInstitute">on Facebook</a>.</p>
+                                <p>For the latest Vancouver Institute Events and updates, follow them <a href="https://www.facebook.com/TheVancouverInstitute">on Facebook</a> or <a href="https://twitter.com/vaninstitute">Twitter</a>.</p>
                             <?php endif; ?>
                         </div>
                     <?php endif;

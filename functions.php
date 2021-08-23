@@ -64,12 +64,25 @@ if ( ! function_exists( 'global_reporting_centre_setup' ) ) :
 		) ) );
 
 		// Add theme support for selective refresh for widgets.
-        add_theme_support( 'customize-selective-refresh-widgets' );
+    add_theme_support( 'customize-selective-refresh-widgets' );
 
-        // Add theme support to change the Gutenberg editor's styles
-        add_theme_support('editor-styles');
-        add_editor_style( 'css/editor.css' );
+    // Add theme support to change the Gutenberg editor's styles
+    add_theme_support('editor-styles');
+    add_editor_style( 'css/editor.css' );
 
+    if( function_exists('acf_register_block_type') ) {
+      // register custom block types
+      acf_register_block_type(array(
+        'name'              => 'collapser',
+        'title'             => __('Collapser'),
+        'description'       => __('A custom collapser block.'),
+        'render_template'   => 'template-parts/acf-blocks/collapser.php',
+        'category'          => 'formatting',
+        'icon'              => 'align-wide',
+        'keywords'          => array( 'collapser', 'accordion', 'expander' ),
+        'supports'          => array( 'align' => false )
+      ));
+    }
 }
 endif;
 add_action( 'after_setup_theme', 'global_reporting_centre_setup' );
