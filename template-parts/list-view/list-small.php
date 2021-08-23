@@ -56,6 +56,12 @@
                 else : echo '<p>' . get_the_excerpt() . '</p>'; endif; ?>
             </div>
 
+            <?php if (in_category('tracing-the-story')) : ?>
+              <div class="featured-buttons">
+                <a class="button primary" aria-label="View story (<?php the_title(); ?>)" href="<?php the_permalink(); ?>" rel="bookmark">View Story</a>
+              </div>
+            <?php endif; ?>
+
             <?php if (is_category('jersey-offshore')) :
               if( have_rows('feature_media_partner') ): ?>
                 <div class="partner-logo">

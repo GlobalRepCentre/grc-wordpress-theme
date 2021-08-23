@@ -88,7 +88,7 @@
           }
         }
       }
-      a {
+      a, li.menu-item-has-children > span {
         display: block;
         text-decoration: none;
         padding: 0.8rem 0.65rem;
@@ -193,7 +193,8 @@
   -ms-flex: 1 0 50%;
   flex: 1 0 50%;
   max-width: 50%;
-  padding-right: 1rem
+  padding-right: 1rem;
+  padding-bottom: 0.3rem;
 }
 
 .site-footer a {

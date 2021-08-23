@@ -20,6 +20,7 @@ hr {
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
+  clear: both;
 }
 
 @import "lists";
@@ -28,6 +29,19 @@ img {
 	height: auto; /* Make sure images are scaled correctly. */
   max-width: 100%; /* Adhere to container width. */
   vertical-align: middle;
+}
+
+.bio {
+  .alignleft {
+    float: none;
+    @include sm { float: left; }
+  }
+  img {
+    width: 107px;
+    height: 107px;
+    margin-right: 1rem;
+    @include sm { margin-bottom: 1rem; }
+  }
 }
 
 figure {

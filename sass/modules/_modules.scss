@@ -144,7 +144,7 @@ aside.about-newsletter {
           display: flex;
           align-items: center;
           flex: 1;
-          flex-basis: 40%;
+          flex-basis: 48.75%;
           padding: 4rem 2.5rem;
         }
       }
@@ -195,7 +195,7 @@ aside.about-newsletter {
 
         @include md {
           flex: 1;
-          flex-basis: 60%;
+          flex-basis: 51.25%;
           position: relative;
           overflow: hidden;
 
@@ -352,4 +352,8 @@ aside.about-newsletter {
       }
     }
   }
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
 }

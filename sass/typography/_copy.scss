@@ -2,7 +2,8 @@
 .list-view p,
 .projects-view p {
   font-size: 0.9em;
-  margin-top: 0
+  margin-top: 0;
+  max-width: $content-width;
 }
 
 .single .entry-content p,
@@ -129,4 +130,18 @@ span.language {
   padding: 0.1rem 0.2rem;
   background: $yellow;
   border-radius: 0.1rem;
+}
+
+p.quote {
+  font-family: $font__headers;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+p.question {
+  margin: 2rem 0 0 !important;
+
+  + p {
+    margin: 0.5rem 0 1.5rem !important;
+  }
 }

@@ -155,13 +155,18 @@ if ( ! function_exists( 'grc_featured_image' ) ) :
 	function grc_featured_image($externalLink=false, $imgSize='medium') {
 		if ( post_password_required() || is_attachment() ) {
 			return;
-        } ?>
+        }
+
+        global $post;
+        $caption = wp_get_attachment_caption( get_post_thumbnail_id( $post ) );
+        ?>
 
         <figure class="post-image">
             <a href="<?php // check if an external link was defined in ACF
                 if (!($externalLink)) : the_permalink(); else : echo $externalLink; endif; ?>" title="<?php the_title(); ?>" aria-hidden="true" tabindex="-1">
                 <?php if (has_post_thumbnail()) : the_post_thumbnail($imgSize); else : echo '<div class="ph-box"></div>'; endif; ?>
             </a>
+            <?php if ($caption && has_category('tracing-the-story')) : echo '<figcaption>' . $caption . '</figcaption>'; endif; ?>
         </figure>
   <?php }
 

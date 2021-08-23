@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area<?php if (has_category('tracing-the-story')): echo ' module'; endif; ?>">
 		<main id="main" class="site-main">
 
     <?php
@@ -33,6 +33,9 @@ get_header();
             elseif (has_category('ideas')) :
                 $postType = 'ideas';
                 get_template_part( 'template-parts/post-types/post', 'ideas' );
+
+            elseif (has_category('tracing-the-story')) :
+              get_template_part( 'template-parts/post-types/post', 'trace-story' );
 
             elseif (has_category('events') || has_category('vancouver-institute-events')) :
                 get_template_part( 'template-parts/post-types/post', 'events' );

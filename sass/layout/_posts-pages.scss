@@ -38,6 +38,10 @@ article#person {
   }
 }
 
+.list-view figure.post-image a img, .projects-view figure.post-image a img {
+	width: 100%;
+}
+
 .list-view {
   article {
     &.small .shrink {
@@ -73,6 +77,11 @@ article#person {
   .grid + .one {
     margin: 1rem 0 2rem;
   }
+}
+
+.list-view.modules article {
+  padding-bottom: 0 !important;
+  border-bottom: 0 !important;
 }
 
 @include md {
@@ -614,4 +623,66 @@ div.att {clear: left; float: left; margin-bottom: 1.5rem;}
 	padding: 1rem;
 	border-radius: 2px;
 	border: 5px double grey;
+}
+
+// MODULES
+.content-area.module {
+
+  figure {
+    margin: 0 0 1rem;
+    img {
+      display: block;
+    }
+  }
+
+  div.header-content {
+    padding: 0 1rem;
+  }
+
+  .entry-content {
+    margin: 0 0 3rem 0;
+  }
+
+  @include md {
+    figure {
+      margin: 0;
+    }
+    article {
+      position: relative;
+    }
+    .entry-header {
+      height: 100%;
+      width: 33%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $darkpurple;
+      color: $white;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p a {
+        color: $white;
+
+        &:focus, &:hover {
+          color: $lightpurple;
+        }
+      }
+    }
+    .entry-content {
+      margin: 0 0 0 33%;
+      padding: 1rem 2rem;
+    }
+  }
+
+  + .site-footer {
+    margin-top: 0;
+  }
+}
+
+// Supporters Page
+#post-38009 .entry-content {
+  text-align: center;
 }

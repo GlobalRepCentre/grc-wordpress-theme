@@ -143,6 +143,12 @@ h2 {
   }
 }
 
+.content-area {
+  h2, h3, h4, h5, h6 {
+    max-width: $content-width;
+  }
+}
+
 #page-about h2.highlight {
   font-size: 1.1em;
   font-family: $font__main;
@@ -150,8 +156,7 @@ h2 {
       font-family: $font__headers;
       font-size: 1.9em;
       background-color: $yellow;
-      display: inline-block;
-      margin-left: 0.75rem;
+      margin-left: 0.25rem;
       padding: 0 0.3rem;
     }
 }

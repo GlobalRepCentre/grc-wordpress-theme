@@ -3,7 +3,7 @@ ul, ol {
 }
 
 ul {
-	list-style: decimal;
+	list-style: disc;
 }
 
 ol {
@@ -16,7 +16,10 @@ li > ol {
 	margin-left: 1.5rem;
 }
 
-.entry-content ul li,
-.entry-content ol li {
-  margin-bottom: 1.5rem;
+.entry-content ul, .entry-content ol {
+  max-width: $content-width;
+
+  li {
+    margin-bottom: 1.5rem;
+  }
 }

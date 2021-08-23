@@ -65,6 +65,16 @@ a {
         background-color: $darkpurple;
       }
     }
+    &.light {
+      background-color: $white;
+      color: $black;
+      margin: 0 0.3rem 0.3rem 0;
+      &:hover,
+      &:focus {
+        background-color: $darkpurple;
+        color: $white;
+      }
+    }
     .fas {
       margin: 0 0.4rem 0;
       font-size: 0.9em;
@@ -142,4 +152,8 @@ h2.person a {
   li {
     margin-right: 0.5rem;
   }
+}
+
+.trace-links a:first-of-type {
+  margin-right: 1rem;
 }
