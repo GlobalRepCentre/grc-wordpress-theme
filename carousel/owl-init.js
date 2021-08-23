@@ -5,6 +5,7 @@ jQuery(document).ready(function($){
   owl.owlCarousel({
   	margin: 24,
     nav: true,
+    autoHeight: true,
     navText: ["<i class='fas fa-arrow-left'></i>","<i class='fas fa-arrow-right'></i>"],
   	responsive: {
   	    0: {

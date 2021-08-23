@@ -79,7 +79,7 @@
         <div class="footer-info-container">
             <div class="site-width grid align-to-edges">
                 <div class="footer-logos column">
-                    <a href="https://journalism.ubc.ca/" title="University of British Columbia"><img width="180" height="38" src="<?php bloginfo('stylesheet_directory'); ?>/img/ubc-logo.png" alt="UBC Logo" /></a>
+                    <a href="https://journalism.ubc.ca/" title="University of British Columbia"><img width="180" height="40" src="<?php bloginfo('stylesheet_directory'); ?>/img/ubc-logo.png" alt="UBC Logo" /></a>
                     <a href="https://gijn.org/" title="Global Investigative Journalism Network"><img width="136" height="36" src="<?php bloginfo('stylesheet_directory'); ?>/img/gijn-logo.png" alt="GIJN Logo" /></a>
                 </div>
                 <p class="attribution column">

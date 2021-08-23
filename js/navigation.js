@@ -7,9 +7,12 @@
 ( function() {
   var container, button, menu, links, i, len;
   let dropdowns = document.querySelectorAll('.menu-item-has-children');
-  let navigation = document.getElementById('site-navigation');
 
-  dropdowns.forEach((dropdown) => { dropdown.tabIndex = 0; })
+  dropdowns.forEach((dropdown) => {
+    dropdown.tabIndex = 0;
+    let dropDownAnchor = dropdown.querySelector('a');
+    dropDownAnchor.outerHTML = '<span>' + dropDownAnchor.innerHTML + '</span>'
+  })
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
@@ -49,30 +52,4 @@
 			menu.setAttribute( 'aria-expanded', 'true' );
 		}
   };
-
-
-/*   // Enable keyboard navigation of dropdown hovers
-
-  for (i = 0; i < dropdowns.length; i++) {
-    dropdowns[i].firstElementChild.tabIndex = -1;
-    addListeners(i);
-  }
-
-  function addListeners(i) {
-    dropdowns[i].addEventListener('focusin', onFocusIn);
-    dropdowns[i].addEventListener('focusout', onFocusOut);
-  }
-
-  function onFocusIn (event) {
-    if (!(event.target.classList.contains('menu-item-has-children')) && !(navigation.classList.contains('toggled'))) {
-      event.target.parentElement.parentElement.classList.add('focus');
-    }
-  }
-
-  function onFocusOut (event) {
-    if (!(event.target.classList.contains('menu-item-has-children')) && !(navigation.classList.contains('toggled'))) {
-      event.target.parentElement.parentElement.classList.remove('focus');
-    }
-  } */
-
 } )();
