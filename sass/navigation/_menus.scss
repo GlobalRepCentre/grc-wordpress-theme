@@ -88,7 +88,7 @@
           }
         }
       }
-      a, li.menu-item-has-children > span {
+      a {
         display: block;
         text-decoration: none;
         padding: 0.8rem 0.65rem;
@@ -98,6 +98,25 @@
           color: $white;
         }
         @include md { padding: 1rem 0.65rem; }
+        @include xl { padding: 1rem; }
+      }
+      li.menu-item-has-children > span {
+        padding: 0.8rem 0.65rem 0;
+        text-transform: uppercase;
+        font-size: 0.6rem;
+        color: $lightpurple;
+        display: block;
+        text-decoration: none;
+        @include md {
+          padding: 1rem 0.65rem;
+          font-size: 1em;
+          color: $lightgrey;
+          text-transform: none;
+          &:hover,
+          &:focus {
+            color: $white;
+          }
+        }
         @include xl { padding: 1rem; }
       }
       &.toggled ul {
