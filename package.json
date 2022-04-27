@@ -9,7 +9,7 @@
     "url": "https://github.com/GlobalRepCentre/grc-wordpress-theme"
   },
   "devDependencies": {
-    "grunt": "^1.1.0",
+    "grunt": "^1.5.2",
     "grunt-autoprefixer": "^0.4.2",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.1.0"
